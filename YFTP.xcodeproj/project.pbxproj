@@ -7,12 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		732F297725839F940072FFE2 /* SendingMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732F297625839F940072FFE2 /* SendingMessageView.swift */; };
+		732F297F2583AB230072FFE2 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732F297E2583AB230072FFE2 /* Messages.swift */; };
 		735E44AE257AF7A600D5317C /* YFTPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E44AD257AF7A600D5317C /* YFTPApp.swift */; };
 		735E44B0257AF7A600D5317C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E44AF257AF7A600D5317C /* ContentView.swift */; };
 		735E44B2257AF7A700D5317C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 735E44B1257AF7A700D5317C /* Assets.xcassets */; };
 		735E44B5257AF7A700D5317C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 735E44B4257AF7A700D5317C /* Preview Assets.xcassets */; };
 		735E44C0257AF7A700D5317C /* YFTPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E44BF257AF7A700D5317C /* YFTPTests.swift */; };
 		735E44CB257AF7A700D5317C /* YFTPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E44CA257AF7A700D5317C /* YFTPUITests.swift */; };
+		736966192584FF1F007D6438 /* GifPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736966182584FF1F007D6438 /* GifPlayerView.swift */; };
+		736966272586A5B9007D6438 /* YFTP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 736966252586A5B9007D6438 /* YFTP.xcdatamodeld */; };
+		7369662E2586A957007D6438 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369662D2586A957007D6438 /* Persistence.swift */; };
+		73831392257F6FFB00591C6F /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73831391257F6FFB00591C6F /* PermissionView.swift */; };
+		73831397257F702700591C6F /* ComposeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73831396257F702700591C6F /* ComposeMessageView.swift */; };
+		738D5E1D2584E77300F8A181 /* SentMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738D5E1C2584E77300F8A181 /* SentMessageView.swift */; };
+		73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BBB25836E4E0018069E /* PreferenceManager.swift */; };
+		73B17BC1258379750018069E /* MessageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BC0258379750018069E /* MessageContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		732F297625839F940072FFE2 /* SendingMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingMessageView.swift; sourceTree = "<group>"; };
+		732F297E2583AB230072FFE2 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		735E44AA257AF7A600D5317C /* YFTP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YFTP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		735E44AD257AF7A600D5317C /* YFTPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFTPApp.swift; sourceTree = "<group>"; };
 		735E44AF257AF7A600D5317C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +57,14 @@
 		735E44C6257AF7A700D5317C /* YFTPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YFTPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		735E44CA257AF7A700D5317C /* YFTPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFTPUITests.swift; sourceTree = "<group>"; };
 		735E44CC257AF7A700D5317C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		736966182584FF1F007D6438 /* GifPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifPlayerView.swift; sourceTree = "<group>"; };
+		736966262586A5B9007D6438 /* YFTP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YFTP.xcdatamodel; sourceTree = "<group>"; };
+		7369662D2586A957007D6438 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		73831391257F6FFB00591C6F /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
+		73831396257F702700591C6F /* ComposeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeMessageView.swift; sourceTree = "<group>"; };
+		738D5E1C2584E77300F8A181 /* SentMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMessageView.swift; sourceTree = "<group>"; };
+		73B17BBB25836E4E0018069E /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
+		73B17BC0258379750018069E /* MessageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +95,7 @@
 		735E44A1257AF7A600D5317C = {
 			isa = PBXGroup;
 			children = (
+				736966252586A5B9007D6438 /* YFTP.xcdatamodeld */,
 				735E44AC257AF7A600D5317C /* YFTP */,
 				735E44BE257AF7A700D5317C /* YFTPTests */,
 				735E44C9257AF7A700D5317C /* YFTPUITests */,
@@ -97,9 +118,18 @@
 			children = (
 				735E44AD257AF7A600D5317C /* YFTPApp.swift */,
 				735E44AF257AF7A600D5317C /* ContentView.swift */,
+				73B17BBB25836E4E0018069E /* PreferenceManager.swift */,
+				73B17BC0258379750018069E /* MessageContainer.swift */,
+				738D5E1C2584E77300F8A181 /* SentMessageView.swift */,
+				73831396257F702700591C6F /* ComposeMessageView.swift */,
+				732F297E2583AB230072FFE2 /* Messages.swift */,
+				732F297625839F940072FFE2 /* SendingMessageView.swift */,
+				73831391257F6FFB00591C6F /* PermissionView.swift */,
 				735E44B1257AF7A700D5317C /* Assets.xcassets */,
 				735E44B6257AF7A700D5317C /* Info.plist */,
 				735E44B3257AF7A700D5317C /* Preview Content */,
+				736966182584FF1F007D6438 /* GifPlayerView.swift */,
+				7369662D2586A957007D6438 /* Persistence.swift */,
 			);
 			path = YFTP;
 			sourceTree = "<group>";
@@ -259,7 +289,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */,
+				732F297F2583AB230072FFE2 /* Messages.swift in Sources */,
+				732F297725839F940072FFE2 /* SendingMessageView.swift in Sources */,
+				73831392257F6FFB00591C6F /* PermissionView.swift in Sources */,
 				735E44B0257AF7A600D5317C /* ContentView.swift in Sources */,
+				736966192584FF1F007D6438 /* GifPlayerView.swift in Sources */,
+				7369662E2586A957007D6438 /* Persistence.swift in Sources */,
+				73B17BC1258379750018069E /* MessageContainer.swift in Sources */,
+				736966272586A5B9007D6438 /* YFTP.xcdatamodeld in Sources */,
+				73831397257F702700591C6F /* ComposeMessageView.swift in Sources */,
+				738D5E1D2584E77300F8A181 /* SentMessageView.swift in Sources */,
 				735E44AE257AF7A600D5317C /* YFTPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -580,6 +620,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		736966252586A5B9007D6438 /* YFTP.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				736966262586A5B9007D6438 /* YFTP.xcdatamodel */,
+			);
+			currentVersion = 736966262586A5B9007D6438 /* YFTP.xcdatamodel */;
+			path = YFTP.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 735E44A2257AF7A600D5317C /* Project object */;
 }

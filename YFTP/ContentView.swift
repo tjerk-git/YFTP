@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    var body: some View {
-        Text("Hello, world!")
-            .padding()
-    }
-}
+    @ObservedObject var preferences : PreferenceManager = PreferenceManager()
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+    var body: some View {
+        switch preferences.notificationSetting {
+            case .notset:
+                PermissionView(preferences: preferences)
+            case .accepted:
+                MessageContainer()
+                    .transition(.slide)
+                    .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
+            case .denied:
+                Text("This app won't work if you don't do notifications")
+            case .loading:
+                Text ("Loading")
+        }
     }
 }
