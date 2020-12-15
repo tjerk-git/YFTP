@@ -14,8 +14,8 @@ import CoreData
 
 struct ComposeMessageView: View {
     var viewModel : MessageContainerViewModel
-    @Environment(\.managedObjectContext) private var viewContext
     @State var message: String = ""
+    var messages : Messages
     
     var body: some View {
         HStack() {
@@ -35,7 +35,6 @@ struct ComposeMessageView: View {
                 VStack(alignment: .center, content: {
                     Button("🚀 BLAST OFF") {
                         viewModel.messageContainerState = .sending
-                        Messages().sendMessage(message: message)
                         addMessage(body: message)
                     }
                     .frame(width: 250, height: 50, alignment: .center)
@@ -53,18 +52,13 @@ struct ComposeMessageView: View {
     }
     
     func addMessage(body : String) {
-        let newMessage = Message(context: viewContext)
-
-        viewContext.performAndWait {
-            newMessage.body = body
-            try? viewContext.save()
-        }
+        messages.sendMessage(message: body)
     }
 }
 
-
-struct ComposeMessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ComposeMessageView(viewModel : MessageContainerViewModel())
-    }
-}
+//
+//struct ComposeMessageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ComposeMessageView(viewModel : MessageContainerViewModel())
+//    }
+//}

@@ -11,8 +11,7 @@ import CoreData
 
 struct SentMessageView: View {
     var viewModel : MessageContainerViewModel
-    @FetchRequest(entity: Message.entity(), sortDescriptors: [])
-    var messages: FetchedResults<Message>
+    var messages : Messages
     
     var body: some View {
         HStack() {
@@ -22,18 +21,16 @@ struct SentMessageView: View {
                     .position(x: 80, y: 40)
                     .scaleEffect(1.6)
                 ZStack{
-                    ForEach(messages) { message in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text("\(message.body ?? "Your message here")")
-                                    .fontWeight(.semibold)
-                                    .frame(maxWidth: .infinity, alignment: .center)
-                                   .font(.title2)
-                                    .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.8))
-                            }
-                            Spacer()
-                        }
+                HStack {
+                    VStack(alignment: .leading) {
+                        Text("\(messages.lastMessage )")
+                            .fontWeight(.semibold)
+                            .frame(maxWidth: .infinity, alignment: .center)
+                           .font(.title2)
+                            .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.8))
                     }
+                    Spacer()
+                }
                 }
                 VStack(){
                     Button("Back to the present") {
@@ -70,8 +67,8 @@ struct SentMessageView: View {
     }
 }
 
-struct SentMessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        SentMessageView(viewModel : MessageContainerViewModel())
-    }
-}
+//struct SentMessageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        SentMessageView(viewModel : MessageContainerViewModel(), messages: <#Messages#>)
+//    }
+//}

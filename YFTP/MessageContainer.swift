@@ -17,12 +17,13 @@ class MessageContainerViewModel: ObservableObject{
 
 struct MessageContainer: View {
     @ObservedObject var viewModel = MessageContainerViewModel()
+    var messages = Messages()
     
     var body: some View {
         switch (viewModel.messageContainerState) {
-            case .composing: ComposeMessageView(viewModel: viewModel)
+        case .composing: ComposeMessageView(viewModel: viewModel, messages: messages)
             case .sending: SendingMessageView(viewModel: viewModel)
-            case .sent: SentMessageView(viewModel: viewModel)
+        case .sent: SentMessageView(viewModel: viewModel, messages : messages)
         }
     }
 }

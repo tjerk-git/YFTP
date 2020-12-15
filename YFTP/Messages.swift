@@ -9,12 +9,15 @@ import Foundation
 import UserNotifications
 import CoreData
 
-class Messages {
+class Messages : ObservableObject {
+    
+    @Published public var lastMessage = ""
         
     func sendMessage(message : String) {
         let content = UNMutableNotificationContent()
         content.title = "You from the past:"
         content.subtitle = message
+        lastMessage = message
         content.sound = UNNotificationSound.default
         // month in seconds
         // 2629743
@@ -25,5 +28,4 @@ class Messages {
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
-
 }
