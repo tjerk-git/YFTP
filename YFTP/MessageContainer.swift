@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum MessageContainerState {
-    case composing, sent, sending
+    case composing, sent, sending, archive
 }
 
 class MessageContainerViewModel: ObservableObject{
@@ -22,8 +22,16 @@ struct MessageContainer: View {
     var body: some View {
         switch (viewModel.messageContainerState) {
         case .composing: ComposeMessageView(viewModel: viewModel, messages: messages)
+                .transition(.move(edge: .leading))
             case .sending: SendingMessageView(viewModel: viewModel)
-        case .sent: SentMessageView(viewModel: viewModel, messages : messages)
+                .transition(.scale)
+                .animation(.easeInOut(duration: 1))
+            case .sent: SentMessageView(viewModel: viewModel, messages : messages)
+                .transition(AnyTransition.asymmetric(insertion: .scale, removal: .move(edge: .bottom)))
+                .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
+        case .archive: ArchiveMessageView(viewModel: viewModel, messages : messages)
+            .transition(AnyTransition.asymmetric(insertion: .scale, removal: .move(edge: .bottom)))
+            .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
         }
     }
 }

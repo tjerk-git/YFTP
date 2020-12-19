@@ -16,8 +16,6 @@ struct ContentView: View {
                 PermissionView(preferences: preferences)
             case .accepted:
                 MessageContainer()
-                    .transition(.slide)
-                    .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
             case .denied:
                 Text("This app won't work if you don't do notifications")
             case .loading:

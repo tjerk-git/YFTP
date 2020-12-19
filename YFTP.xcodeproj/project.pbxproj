@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		732F297725839F940072FFE2 /* SendingMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732F297625839F940072FFE2 /* SendingMessageView.swift */; };
 		732F297F2583AB230072FFE2 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732F297E2583AB230072FFE2 /* Messages.swift */; };
+		7344B7D7258A54F500F75C7A /* ArchiveMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7344B7D6258A54F500F75C7A /* ArchiveMessageView.swift */; };
 		735E44AE257AF7A600D5317C /* YFTPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E44AD257AF7A600D5317C /* YFTPApp.swift */; };
 		735E44B0257AF7A600D5317C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E44AF257AF7A600D5317C /* ContentView.swift */; };
 		735E44B2257AF7A700D5317C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 735E44B1257AF7A700D5317C /* Assets.xcassets */; };
@@ -21,6 +22,7 @@
 		73831392257F6FFB00591C6F /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73831391257F6FFB00591C6F /* PermissionView.swift */; };
 		73831397257F702700591C6F /* ComposeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73831396257F702700591C6F /* ComposeMessageView.swift */; };
 		738D5E1D2584E77300F8A181 /* SentMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738D5E1C2584E77300F8A181 /* SentMessageView.swift */; };
+		73AC3733258AB1FF0008C19A /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AC3732258AB1FF0008C19A /* MessageRow.swift */; };
 		73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BBB25836E4E0018069E /* PreferenceManager.swift */; };
 		73B17BC1258379750018069E /* MessageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BC0258379750018069E /* MessageContainer.swift */; };
 /* End PBXBuildFile section */
@@ -45,6 +47,7 @@
 /* Begin PBXFileReference section */
 		732F297625839F940072FFE2 /* SendingMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingMessageView.swift; sourceTree = "<group>"; };
 		732F297E2583AB230072FFE2 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		7344B7D6258A54F500F75C7A /* ArchiveMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveMessageView.swift; sourceTree = "<group>"; };
 		735E44AA257AF7A600D5317C /* YFTP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YFTP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		735E44AD257AF7A600D5317C /* YFTPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFTPApp.swift; sourceTree = "<group>"; };
 		735E44AF257AF7A600D5317C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +66,7 @@
 		73831391257F6FFB00591C6F /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		73831396257F702700591C6F /* ComposeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeMessageView.swift; sourceTree = "<group>"; };
 		738D5E1C2584E77300F8A181 /* SentMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMessageView.swift; sourceTree = "<group>"; };
+		73AC3732258AB1FF0008C19A /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
 		73B17BBB25836E4E0018069E /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		73B17BC0258379750018069E /* MessageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,6 +121,8 @@
 			isa = PBXGroup;
 			children = (
 				735E44AD257AF7A600D5317C /* YFTPApp.swift */,
+				7344B7D6258A54F500F75C7A /* ArchiveMessageView.swift */,
+				73AC3732258AB1FF0008C19A /* MessageRow.swift */,
 				735E44AF257AF7A600D5317C /* ContentView.swift */,
 				73B17BBB25836E4E0018069E /* PreferenceManager.swift */,
 				73B17BC0258379750018069E /* MessageContainer.swift */,
@@ -292,6 +298,8 @@
 				73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */,
 				732F297F2583AB230072FFE2 /* Messages.swift in Sources */,
 				732F297725839F940072FFE2 /* SendingMessageView.swift in Sources */,
+				7344B7D7258A54F500F75C7A /* ArchiveMessageView.swift in Sources */,
+				73AC3733258AB1FF0008C19A /* MessageRow.swift in Sources */,
 				73831392257F6FFB00591C6F /* PermissionView.swift in Sources */,
 				735E44B0257AF7A600D5317C /* ContentView.swift in Sources */,
 				736966192584FF1F007D6438 /* GifPlayerView.swift in Sources */,
@@ -467,10 +475,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tjerk.YFTP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tjerk.yftp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -489,10 +497,10 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tjerk.YFTP;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tjerk.yftp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

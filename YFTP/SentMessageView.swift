@@ -22,12 +22,15 @@ struct SentMessageView: View {
                     .scaleEffect(1.6)
                 ZStack{
                 HStack {
+                    Text("It's done, there it goes")
                     VStack(alignment: .leading) {
-                        Text("\(messages.lastMessage )")
+                        Text("\(messages.lastMessage)")
                             .fontWeight(.semibold)
                             .frame(maxWidth: .infinity, alignment: .center)
                            .font(.title2)
                             .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.8))
+                            .transition(.opacity)
+                        
                     }
                     Spacer()
                 }
