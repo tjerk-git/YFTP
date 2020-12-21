@@ -9,6 +9,7 @@ import SwiftUI
 import UserNotifications
 import Messages
 import CoreData
+import AVFoundation
 
 struct ComposeMessageView: View {
     
@@ -21,11 +22,15 @@ struct ComposeMessageView: View {
     var body: some View {
         HStack() {
             VStack(alignment: .leading, spacing: 20) {
-                Text("Send a message to yourself into the future")
+                Text("Send a message to yourself into the future...")
                     .fontWeight(.semibold)
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/)
-                    .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.8))
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, maxHeight: 100, alignment: .center)
+                    .font(Font.system(size: 25.0))
+                    .foregroundColor(Color.white)
+                    .background(Color.blue)
+                    .cornerRadius(15)
+                    .padding(.horizontal, 20.0)
                 ZStack(alignment: .leading) {
                       if message.isEmpty { Text("Enter message...").foregroundColor(.white).padding(10) }
                         TextField("", text: $message)
@@ -44,6 +49,7 @@ struct ComposeMessageView: View {
                     Spacer()
                     ZStack {
                         Button("🚀 BLAST OFF") {
+                            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                             if !message.isEmpty {
                                 viewModel.messageContainerState = .sending
                                 addMessage(body: message)
@@ -85,9 +91,9 @@ struct ComposeMessageView: View {
     }
 }
 
-//
-//struct ComposeMessageView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ComposeMessageView(viewModel : MessageContainerViewModel(), messages: Messages())
-//    }
-//}
+
+struct ComposeMessageView_Previews: PreviewProvider {
+    static var previews: some View {
+        ComposeMessageView(viewModel : MessageContainerViewModel(), messages: Messages())
+    }
+}

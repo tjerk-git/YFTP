@@ -29,6 +29,7 @@ struct ArchiveMessageView: View {
                     }
                 }.listRowBackground(Color.black)
                 .frame(maxHeight:.infinity)
+                //.onDelete(perform: deleteMessage)
                                 
                 VStack(alignment: .center, content: {
                     Spacer()
@@ -51,6 +52,22 @@ struct ArchiveMessageView: View {
         .edgesIgnoringSafeArea(.all)
     }
 }
+
+//func deleteMovie(at offsets: IndexSet) {
+//  // 1.
+//  offsets.forEach { index in
+//    // 2.
+//    let movie = self.movies[index]
+//
+//    // 3.
+//    self.managedObjectContext.delete(movie)
+//  }
+//
+//  // 4.
+//  saveContext()
+//}
+
+
 struct ArchiveMessageView_Previews: PreviewProvider {
     static var previews: some View {
         ArchiveMessageView(viewModel : MessageContainerViewModel(), messages: Messages())
