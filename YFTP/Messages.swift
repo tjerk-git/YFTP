@@ -12,40 +12,41 @@ import CoreData
 class Messages : ObservableObject {
     
     @Published public var lastMessage = ""
-//    @Published public var archive = []
-//    
-//    init(){
-//        // load latest messages
-//        let persistenceController = PersistenceController.shared
-//        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Message")
-//            request.returnsObjectsAsFaults = false
-//            do {
-//                let result = try persistenceController.container.viewContext.fetch(request)
-//                for data in result as! [NSManagedObject] {
-//                    archive.append(data.value(forKey: "body") ?? "")
-//                   //print(data.value(forKey: "body") as! String)
-//              }
-//
-//            } catch {
-//                print("Failed")
-//            }
-//    }
-//
-    func sendMessage(message : String) {
+
+    func sendMessage(message : String, sender : String?) {
         let content = UNMutableNotificationContent()
         let persistenceController = PersistenceController.shared
+        let defaults = UserDefaults.standard
         
-        content.title = "You from the past:"
-        content.subtitle = message
+        let name = defaults.string(forKey: "Name") ?? "You from the past"
+        content.title = name
+        
+        // for gift messages
+        if ((sender) != nil) {
+            content.title = sender ?? "Someone from the past"
+        }
+        
+        content.body = message
         lastMessage = message
         content.sound = UNNotificationSound.default
-        // month in seconds
-        // 2629743
-        let lower : UInt32 = 120
-        // set to two weeks for now
-        let upper : UInt32 = 1209600
-        let randomNumber = arc4random_uniform(upper - lower) + lower
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: TimeInterval(randomNumber), repeats: false)
+        let date = Date()
+        let calendar = Calendar.current
+
+        let year = calendar.component(.year, from: date)
+        var month = calendar.component(.month, from: date)
+        let currentday = calendar.component(.day, from: date)
+        let hour = Int.random(in: 8...18)
+        let day = Int.random(in: currentday...28)
+
+        // end of the month, go to next month, end of the year? stay in this year.
+        if(currentday >= 25 && month != 12){
+            month += 1
+        }
+
+        let dateComponents = DateComponents(year: year, month: month, day: day, hour: hour, minute: 22)
+       // let dateComponents = DateComponents(year: 2021, month: 1, day: 16, hour: 23, minute: 32)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: false)
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
         
@@ -54,6 +55,8 @@ class Messages : ObservableObject {
 
         persistenceController.container.viewContext.performAndWait {
            newMessage.body = message
+           newMessage.dateAdded = Date()
+           newMessage.id = request.identifier
            try? persistenceController.container.viewContext.save()
         }
         

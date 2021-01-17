@@ -17,7 +17,7 @@ struct ContentView: View {
             case .accepted:
                 MessageContainer()
             case .denied:
-                Text("This app won't work if you don't do notifications")
+                MessageContainer()
             case .loading:
                 Text ("Loading")
         }

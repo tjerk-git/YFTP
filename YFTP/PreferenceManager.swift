@@ -45,5 +45,8 @@ class PreferenceManager: ObservableObject {
             }
         }
     }
+    func denyPermission(){
+        self.notificationSetting = .denied
+    }
 }
 

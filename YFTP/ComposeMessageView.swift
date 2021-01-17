@@ -12,16 +12,32 @@ import CoreData
 import AVFoundation
 
 struct ComposeMessageView: View {
-    
+
     var viewModel : MessageContainerViewModel
     @State var message: String = ""
     @State private var showingAlert = false
-    
+    let largeConfig = UIImage.SymbolConfiguration(textStyle: .largeTitle)
     var messages : Messages
-    
+
     var body: some View {
+        
         HStack() {
             VStack(alignment: .leading, spacing: 20) {
+                
+                HStack() {
+                    
+                    Button(action: {
+                        viewModel.messageContainerState = .settings
+                    }) {
+                        HStack(spacing: 10) {
+                            Image("settings")
+                                .resizable()
+                                .padding(.all)
+                                .frame(width: 50, height: 50, alignment: .bottomTrailing)
+                                .edgesIgnoringSafeArea(.all)                        }
+                    }
+                }
+      
                 Text("Send a message to yourself into the future...")
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.leading)
@@ -32,20 +48,28 @@ struct ComposeMessageView: View {
                     .cornerRadius(15)
                     .padding(.horizontal, 20.0)
                 ZStack(alignment: .leading) {
-                      if message.isEmpty { Text("Enter message...").foregroundColor(.white).padding(10) }
-                        TextField("", text: $message)
-                            .font(.title2)
-                            .accentColor(.blue)
+
+                    ZStack {
+                        if message.isEmpty { Text("Tap here to start typing...").foregroundColor(.white).padding(10).background(Color.black) }
+                        
+                        TextEditor(text: $message)
+                            .background(Color.white)
                             .foregroundColor(Color.white)
                             .padding(10)
+                            .opacity(0.6)
+                            .cornerRadius(15)
                             .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    }
+    
                   }
       
                 VStack(alignment: .center, content: {
-                    Button("Show sent messages") {
+                    Button("🔭 Show sent messages") {
                         viewModel.messageContainerState = .archive
-                    }.frame(width: .infinity, height:50, alignment: .center)
-                    .font(.footnote)
+                    }
+                    .font(.subheadline)
+                    .cornerRadius(10)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
                     Spacer()
                     ZStack {
                         Button("🚀 BLAST OFF") {
@@ -60,7 +84,6 @@ struct ComposeMessageView: View {
                         .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
                         .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
                         .cornerRadius(10)
-                        .frame(maxWidth: .infinity)
                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         .padding(30)
                         .alert(isPresented: $showingAlert, content: {
@@ -87,7 +110,7 @@ struct ComposeMessageView: View {
     }
     
     func addMessage(body : String) {
-        messages.sendMessage(message: body)
+        messages.sendMessage(message: body, sender: nil)
     }
 }
 

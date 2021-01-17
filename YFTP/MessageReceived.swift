@@ -9,26 +9,14 @@ import SwiftUI
 import CoreData
 import AudioToolbox
 
-struct SentMessageView: View {
+struct MessageReceivedView: View {
     var viewModel : MessageContainerViewModel
     var messages : Messages
-    
-    @State var hidden = false;
-    
     var body: some View {
-        let _ = Timer.scheduledTimer(withTimeInterval: 2, repeats: false, block: { timer in
-            hidden = true
-            AudioServicesPlaySystemSound(1521)
-        })
         HStack() {
             Spacer()
             VStack(alignment: .leading, spacing: 20){
                 ZStack{
-                    Text("There it goes..")
-                        .fontWeight(.semibold)
-                        .frame(maxWidth: .infinity, alignment: .center)
-                        .font(.title2)
-                        .foregroundColor(Color(red: 1.0, green: 1.0, blue: 1.0, opacity: 0.8))
                     Image("Moon")
                         .position(x: 80, y: 40)
                         .scaleEffect(1.6)
@@ -44,8 +32,6 @@ struct SentMessageView: View {
                             .background(Color.blue)
                             .cornerRadius(15)
                             .padding(15)
-                        
-                            .isHidden(hidden)
                     }
                     Spacer()
                 }
@@ -85,37 +71,8 @@ struct SentMessageView: View {
     }
 }
 
-struct SentMessageView_Previews: PreviewProvider {
+struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        SentMessageView(viewModel : MessageContainerViewModel(), messages: Messages())
-    }
-}
-extension View {
-    
-    /// Hide or show the view based on a boolean value.
-    ///
-    /// Example for visibility:
-    /// ```
-    /// Text("Label")
-    ///     .isHidden(true)
-    /// ```
-    ///
-    /// Example for complete removal:
-    /// ```
-    /// Text("Label")
-    ///     .isHidden(true, remove: true)
-    /// ```
-    ///
-    /// - Parameters:
-    ///   - hidden: Set to `false` to show the view. Set to `true` to hide the view.
-    ///   - remove: Boolean value indicating whether or not to remove the view.
-    @ViewBuilder func isHidden(_ hidden: Bool, remove: Bool = false) -> some View {
-        if hidden {
-            if !remove {
-                self.hidden()
-            }
-        } else {
-            self
-        }
+        MessageView(viewModel : MessageContainerViewModel(), messages: Messages())
     }
 }

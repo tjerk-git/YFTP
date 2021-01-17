@@ -26,10 +26,9 @@ struct ArchiveMessageView: View {
                 List {
                     ForEach(archive, id: \.body) {
                         MessageRow(message: $0)
-                    }
+                    }.onDelete(perform: deleteMessage)
                 }.listRowBackground(Color.black)
                 .frame(maxHeight:.infinity)
-                //.onDelete(perform: deleteMessage)
                                 
                 VStack(alignment: .center, content: {
                     Spacer()
@@ -51,21 +50,26 @@ struct ArchiveMessageView: View {
         }
         .edgesIgnoringSafeArea(.all)
     }
+    
+    func deleteMessage(at offsets: IndexSet) {
+      offsets.forEach { index in
+        let message = self.archive[index]
+        self.managedObjectContext.delete(message)
+      }
+      saveContext()
+    }
+    
+
+    func saveContext() {
+      do {
+        try managedObjectContext.save()
+      } catch {
+        print("Error saving managed object context: \(error)")
+      }
+    }
+    
 }
 
-//func deleteMovie(at offsets: IndexSet) {
-//  // 1.
-//  offsets.forEach { index in
-//    // 2.
-//    let movie = self.movies[index]
-//
-//    // 3.
-//    self.managedObjectContext.delete(movie)
-//  }
-//
-//  // 4.
-//  saveContext()
-//}
 
 
 struct ArchiveMessageView_Previews: PreviewProvider {
