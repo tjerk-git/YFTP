@@ -11,6 +11,7 @@ import UserNotifications
 struct messageJSON : Codable {
     var body : String
     var sender : String
+    var date : Double
 }
 
 @main
@@ -18,7 +19,7 @@ struct YFTPApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     @StateObject var messages = Messages()
-    @State var showingDetail = false
+    @State var showingDetail : Bool = false
     @State var receivedMessage = ""
     @State var sender = ""
     
@@ -32,7 +33,7 @@ struct YFTPApp: App {
                 .onOpenURL { url in
                     self.importJSON(url: url)
                 }.sheet(isPresented: $showingDetail) {
-                    MessageReceivedView(message: receivedMessage, sender: sender)
+                    MessageReceivedView(showingDetail: $showingDetail, message: receivedMessage, sender: sender)
                 }
         }
     }
@@ -63,7 +64,13 @@ struct YFTPApp: App {
             if let message = try? decoder.decode(messageJSON.self, from: data) {
                 receivedMessage = message.body
                 sender = message.sender
-                messages.sendMessage(message: message.body, sender: message.sender)
+
+                if(message.date != 0.0){
+                    let convertedDate = Date(timeIntervalSinceReferenceDate: message.date)
+                    messages.sendMessageWithDate(message: message.body, sender: message.sender, sendDate: convertedDate)
+                }
+                
+                messages.sendMessage(message: message.body, sender: sender)
                 showingDetail = true
             }
         }

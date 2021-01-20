@@ -18,7 +18,7 @@ struct SettingsView: View {
         HStack() {
             Spacer()
             VStack(alignment: .leading, spacing: 20){
-                List(){
+                Form {
                 Text("Messages will come from: ")
                 TextField(
                     defaults.string(forKey: "Name") ?? "Username",
@@ -28,26 +28,24 @@ struct SettingsView: View {
                 }.padding(10)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
-                
-                    Button(buttonText) {
-                        defaults.set(username, forKey: "Name")
-                        buttonText = "Saved ✅"
-                    }
-                    .frame(width: 250, height: 50, alignment: .center)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .frame(maxWidth: .infinity)
-                Button("Go back") {
-                    viewModel.messageContainerState = .composing
+                }.frame(maxHeight: .infinity)
+                Button(buttonText) {
+                    defaults.set(username, forKey: "Name")
+                    buttonText = "Saved ✅"
                 }
                 .frame(width: 250, height: 50, alignment: .center)
                 .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
+                .background(Color.blue)
                 .cornerRadius(10)
                 .frame(maxWidth: .infinity)
-
-                }.frame(maxHeight: .infinity)
+            Button("Go back") {
+                viewModel.messageContainerState = .composing
+            }
+            .frame(width: 250, height: 50, alignment: .center)
+            .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
+            .cornerRadius(10)
+            .frame(maxWidth: .infinity)
                 Spacer()
             }.padding(.top, 75)
         }.background(Color.black)

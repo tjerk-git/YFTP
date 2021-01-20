@@ -22,10 +22,8 @@ struct ComposeMessageView: View {
     var body: some View {
         
         HStack() {
-            VStack(alignment: .leading, spacing: 20) {
-                
+            VStack(alignment: .leading, spacing: 10) {
                 HStack() {
-                    
                     Button(action: {
                         viewModel.messageContainerState = .settings
                     }) {
@@ -46,7 +44,7 @@ struct ComposeMessageView: View {
                     .foregroundColor(Color.white)
                     .background(Color.blue)
                     .cornerRadius(15)
-                    .padding(.horizontal, 20.0)
+                    .padding(.horizontal, 10)
                 ZStack(alignment: .leading) {
 
                     ZStack {
@@ -70,6 +68,11 @@ struct ComposeMessageView: View {
                     .font(.subheadline)
                     .cornerRadius(10)
                     .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+                    Text("or...").font(.subheadline).foregroundColor(.white).bold()
+                        .padding(10)
+                    Button("🎁 Send a message to a friend"){
+                        viewModel.messageContainerState = .composegift
+                    }.padding(20).font(.subheadline)
                     Spacer()
                     ZStack {
                         Button("🚀 BLAST OFF") {
@@ -95,7 +98,7 @@ struct ComposeMessageView: View {
                 }).frame(maxHeight: .infinity)
          
                 Spacer()
-            }.padding(.top, 75)
+            }.padding(.top, 20)
         }.background(Color.black)
         .edgesIgnoringSafeArea(.all)
         .onTapGesture {
@@ -110,7 +113,10 @@ struct ComposeMessageView: View {
     }
     
     func addMessage(body : String) {
-        messages.sendMessage(message: body, sender: nil)
+        let defaults = UserDefaults.standard
+        let sender = defaults.string(forKey: "Name") ?? "You from the past"
+        
+        messages.sendMessage(message: body, sender: sender)
     }
 }
 

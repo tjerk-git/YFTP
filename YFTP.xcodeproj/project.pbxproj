@@ -11,8 +11,10 @@
 		732F297F2583AB230072FFE2 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732F297E2583AB230072FFE2 /* Messages.swift */; };
 		7344B7D7258A54F500F75C7A /* ArchiveMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7344B7D6258A54F500F75C7A /* ArchiveMessageView.swift */; };
 		73487F0425B1E5A30029E773 /* MessageReceivedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73487F0325B1E5A30029E773 /* MessageReceivedView.swift */; };
-		73487F0925B36FBE0029E773 /* message.yftp in Resources */ = {isa = PBXBuildFile; fileRef = 73487F0825B36FBE0029E773 /* message.yftp */; };
 		73487F3825B39CE80029E773 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73487F3725B39CE80029E773 /* AppDelegate.swift */; };
+		734A0B9125B5A0F4007BE57C /* ComposeGiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A0B9025B5A0F4007BE57C /* ComposeGiftView.swift */; };
+		734A0B9625B5ACC8007BE57C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A0B9525B5ACC8007BE57C /* ActivityViewController.swift */; };
+		734A0B9B25B5C99E007BE57C /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A0B9A25B5C99E007BE57C /* ShareSheet.swift */; };
 		735E44AE257AF7A600D5317C /* YFTPApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E44AD257AF7A600D5317C /* YFTPApp.swift */; };
 		735E44B0257AF7A600D5317C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E44AF257AF7A600D5317C /* ContentView.swift */; };
 		735E44B2257AF7A700D5317C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 735E44B1257AF7A700D5317C /* Assets.xcassets */; };
@@ -55,8 +57,10 @@
 		732F297E2583AB230072FFE2 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		7344B7D6258A54F500F75C7A /* ArchiveMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveMessageView.swift; sourceTree = "<group>"; };
 		73487F0325B1E5A30029E773 /* MessageReceivedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageReceivedView.swift; sourceTree = "<group>"; };
-		73487F0825B36FBE0029E773 /* message.yftp */ = {isa = PBXFileReference; lastKnownFileType = text; path = message.yftp; sourceTree = "<group>"; };
 		73487F3725B39CE80029E773 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		734A0B9025B5A0F4007BE57C /* ComposeGiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeGiftView.swift; sourceTree = "<group>"; };
+		734A0B9525B5ACC8007BE57C /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		734A0B9A25B5C99E007BE57C /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
 		735E44AA257AF7A600D5317C /* YFTP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YFTP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		735E44AD257AF7A600D5317C /* YFTPApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFTPApp.swift; sourceTree = "<group>"; };
 		735E44AF257AF7A600D5317C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,7 +115,6 @@
 		735E44A1257AF7A600D5317C = {
 			isa = PBXGroup;
 			children = (
-				73487F0825B36FBE0029E773 /* message.yftp */,
 				739333CA25A340EC0070B000 /* .Gemfile */,
 				736966252586A5B9007D6438 /* YFTP.xcdatamodeld */,
 				735E44AC257AF7A600D5317C /* YFTP */,
@@ -142,6 +145,9 @@
 				73B17BC0258379750018069E /* MessageContainer.swift */,
 				738D5E1C2584E77300F8A181 /* SentMessageView.swift */,
 				73487F0325B1E5A30029E773 /* MessageReceivedView.swift */,
+				734A0B9025B5A0F4007BE57C /* ComposeGiftView.swift */,
+				734A0B9A25B5C99E007BE57C /* ShareSheet.swift */,
+				734A0B9525B5ACC8007BE57C /* ActivityViewController.swift */,
 				73831396257F702700591C6F /* ComposeMessageView.swift */,
 				732F297E2583AB230072FFE2 /* Messages.swift */,
 				732F297625839F940072FFE2 /* SendingMessageView.swift */,
@@ -289,7 +295,6 @@
 			files = (
 				739333CB25A340EC0070B000 /* .Gemfile in Resources */,
 				735E44B5257AF7A700D5317C /* Preview Assets.xcassets in Resources */,
-				73487F0925B36FBE0029E773 /* message.yftp in Resources */,
 				735E44B2257AF7A700D5317C /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,14 +327,17 @@
 				7344B7D7258A54F500F75C7A /* ArchiveMessageView.swift in Sources */,
 				73AC3733258AB1FF0008C19A /* MessageRow.swift in Sources */,
 				73831392257F6FFB00591C6F /* PermissionView.swift in Sources */,
+				734A0B9125B5A0F4007BE57C /* ComposeGiftView.swift in Sources */,
 				735E44B0257AF7A600D5317C /* ContentView.swift in Sources */,
 				736966192584FF1F007D6438 /* GifPlayerView.swift in Sources */,
 				7369662E2586A957007D6438 /* Persistence.swift in Sources */,
+				734A0B9B25B5C99E007BE57C /* ShareSheet.swift in Sources */,
 				73B17BC1258379750018069E /* MessageContainer.swift in Sources */,
 				736966272586A5B9007D6438 /* YFTP.xcdatamodeld in Sources */,
 				73487F0425B1E5A30029E773 /* MessageReceivedView.swift in Sources */,
 				73831397257F702700591C6F /* ComposeMessageView.swift in Sources */,
 				738D5E1D2584E77300F8A181 /* SentMessageView.swift in Sources */,
+				734A0B9625B5ACC8007BE57C /* ActivityViewController.swift in Sources */,
 				73487F3825B39CE80029E773 /* AppDelegate.swift in Sources */,
 				735E44AE257AF7A600D5317C /* YFTPApp.swift in Sources */,
 			);
@@ -500,7 +508,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tjerk.yftp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -524,7 +532,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tjerk.yftp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

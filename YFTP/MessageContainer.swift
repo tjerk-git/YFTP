@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum MessageContainerState {
-    case composing, sent, sending, archive, settings
+    case composing, sent, sending, archive, settings, composegift
 }
 
 class MessageContainerViewModel: ObservableObject{
@@ -33,6 +33,9 @@ struct MessageContainer: View {
                 .transition(AnyTransition.asymmetric(insertion: .scale, removal: .move(edge: .bottom)))
                 .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
         case .settings: SettingsView(viewModel: viewModel)
+            .transition(AnyTransition.asymmetric(insertion: .scale, removal: .move(edge: .bottom)))
+            .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
+        case .composegift: ComposeGiftView(viewModel: viewModel, messages: messages)
             .transition(AnyTransition.asymmetric(insertion: .scale, removal: .move(edge: .bottom)))
             .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
         }
