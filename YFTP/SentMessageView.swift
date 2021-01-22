@@ -52,7 +52,7 @@ struct SentMessageView: View {
                 }
                 VStack(){
                     Button("Back to the present") {
-                        viewModel.messageContainerState = .composing
+                        viewModel.messageContainerState = .none
                     }
                     .frame(width: 250, height: 50, alignment: .center)
                     .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)

@@ -16,41 +16,46 @@ struct SettingsView: View {
     var body: some View {
     
         HStack() {
-            Spacer()
             VStack(alignment: .leading, spacing: 20){
                 Form {
-                Text("Messages will come from: ")
-                TextField(
-                    defaults.string(forKey: "Name") ?? "Username",
-                         text: $username
-                    ) { isEditing in
-                        self.isEditing = isEditing
-                }.padding(10)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                }.frame(maxHeight: .infinity)
-                Button(buttonText) {
-                    defaults.set(username, forKey: "Name")
-                    buttonText = "Saved ✅"
-                }
-                .frame(width: 250, height: 50, alignment: .center)
-                .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                .background(Color.blue)
-                .cornerRadius(10)
-                .frame(maxWidth: .infinity)
-            Button("Go back") {
-                viewModel.messageContainerState = .composing
-            }
-            .frame(width: 250, height: 50, alignment: .center)
-            .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
-            .cornerRadius(10)
-            .frame(maxWidth: .infinity)
-                Spacer()
-            }.padding(.top, 75)
+                    Text("Messages will come from: ")
+                    TextField(
+                        defaults.string(forKey: "Name") ?? "Username",
+                             text: $username
+                        ) { isEditing in
+                            self.isEditing = isEditing
+                            self.buttonText = "Save"
+                    }.padding(10)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                    
+                    Button(buttonText) {
+                        defaults.set(username, forKey: "Name")
+                        buttonText = "Saved ✅"
+                    }
+                    .frame(width: 250, height: 50, alignment: .center)
+                    .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+                    .background(Color.blue)
+                    .cornerRadius(10)
+                    .frame(maxWidth: .infinity)
+                    .padding(20)
+                }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                
+            }       .onTapGesture {
+                defaults.set(username, forKey: "Name")
+                buttonText = "Saved ✅"
+                let keyWindow = UIApplication.shared.connectedScenes
+                                   .filter({$0.activationState == .foregroundActive})
+                                   .map({$0 as? UIWindowScene})
+                                   .compactMap({$0})
+                                   .first?.windows
+                                   .filter({$0.isKeyWindow}).first
+                keyWindow!.endEditing(true)
         }.background(Color.black)
         .edgesIgnoringSafeArea(.all)
-}
+
+        }
+    }
 }
 
     

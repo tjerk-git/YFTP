@@ -51,29 +51,28 @@ struct ComposeGiftView: View {
         
         HStack() {
             VStack(alignment: .leading, spacing: 20) {
-            
+                Image(systemName: "gift.fill").foregroundColor(.white)
+                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 50, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 10, maxHeight: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 Text("Gift a message to someone...")
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity, maxHeight: 100, alignment: .center)
                     .font(Font.system(size: 25.0))
-                    .foregroundColor(Color.white)
-                    .background(Color.blue)
-                    .cornerRadius(15)
+                    .foregroundColor(Color.blue)
                     .padding(.horizontal, 20.0)
                 
-                VStack(){
-                    if message.isEmpty { Text("Tap here to start typing...").foregroundColor(.white).padding(10).background(Color.black) }
-                    
-                    TextEditor(text: $message)
-                        .background(Color.white)
-                        .foregroundColor(Color.white)
-                        .padding(10)
-                        .opacity(0.6)
-                        .cornerRadius(15)
-                        .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 150, alignment: .bottomLeading)
-                
-                }
+                ZStack(alignment: .leading) {
+                    ZStack {
+                        if message.isEmpty { Text("Tap here to start typing...").foregroundColor(.white).padding(10).background(Color.black) }
+                        
+                        TextEditor(text: $message)
+                            .background(Color.white)
+                            .foregroundColor(Color.white)
+                            .opacity(0.6)
+                            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 100, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 100, maxHeight: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(15)
+                    }
+
+                  }
                 
                 VStack(alignment: .leading) {
                     
@@ -95,12 +94,11 @@ struct ComposeGiftView: View {
                         if(self.pickADate){
                             DatePicker("When do you want to it to arrive?", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
                         }
-                    }.frame(maxHeight: .infinity)
+                    }.frame(maxHeight: 700)
                        
                     }
       
                 VStack(alignment: .center, content: {
-                    Spacer()
                     ZStack {
                         Button("🚀 BLAST OFF") {
                             AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
@@ -126,19 +124,11 @@ struct ComposeGiftView: View {
                             Alert(title: Text("Please fill in a message"), message: Text("Message can't be empty!"), dismissButton: .default(Text("Sorry, jeez")))
                         })
                     }
-                    Button("Back to the present") {
-                        viewModel.messageContainerState = .composing
-                    }
-                    .frame(width: 250, height: 50, alignment: .center)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                    .background(Color.blue)
-                    .cornerRadius(10)
-                    .frame(maxWidth: .infinity)
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+    
                 }).frame(maxHeight: .infinity)
                 
                 Spacer()
-            }.padding(.top, 75)
+            }.padding(.top, 45)
         }.background(Color.black)
         .edgesIgnoringSafeArea(.all)
         .onTapGesture {
@@ -213,8 +203,8 @@ extension ComposeGiftView {
   }
 }
 
-//struct ComposeGiftView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ComposeGiftView(viewModel : MessageContainerViewModel(), messages: Messages())
-//    }
-//}
+struct ComposeGiftView_Previews: PreviewProvider {
+    static var previews: some View {
+        ComposeGiftView(viewModel : MessageContainerViewModel(), messages: Messages())
+    }
+}

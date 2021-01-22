@@ -8,37 +8,50 @@
 import SwiftUI
 
 enum MessageContainerState {
-    case composing, sent, sending, archive, settings, composegift
+    case sent, sending, none
 }
 
 class MessageContainerViewModel: ObservableObject{
-    @Published var messageContainerState : MessageContainerState = .composing
+    @Published var messageContainerState : MessageContainerState = .none
 }
 
 struct MessageContainer: View {
+    
+    @State var currentView: Int = 1
     @ObservedObject var viewModel = MessageContainerViewModel()
     var messages = Messages()
     
     var body: some View {
+        let tabview =  TabView(selection: $currentView) {
+            ComposeMessageView(viewModel: viewModel, messages : messages)
+             .tabItem {
+                 Image(systemName: "square.and.pencil")
+                 Text("Write")
+             }.tag(1)
+            ComposeGiftView(viewModel: viewModel, messages: messages)
+                .tabItem {
+                    Image(systemName: "gift.fill")
+                    Text("Gift")
+                }.tag(2)
+            ArchiveMessageView(viewModel: viewModel, messages : messages)
+             .tabItem {
+                 Image(systemName: "memories")
+                 Text("Archive")
+             }.tag(3)
+            SettingsView(viewModel: viewModel)
+             .tabItem {
+                 Image(systemName: "gear")
+                 Text("Settings")
+             }.tag(4)
+         }
+        
         switch (viewModel.messageContainerState) {
-        case .composing: ComposeMessageView(viewModel: viewModel, messages: messages)
-                .transition(.move(edge: .leading))
             case .sending: SendingMessageView(viewModel: viewModel)
-                .transition(.scale)
-                .animation(.easeInOut(duration: 1))
             case .sent: SentMessageView(viewModel: viewModel, messages : messages)
-                .transition(AnyTransition.asymmetric(insertion: .scale, removal: .move(edge: .bottom)))
-                .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
-            case .archive: ArchiveMessageView(viewModel: viewModel, messages : messages)
-                .transition(AnyTransition.asymmetric(insertion: .scale, removal: .move(edge: .bottom)))
-                .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
-        case .settings: SettingsView(viewModel: viewModel)
-            .transition(AnyTransition.asymmetric(insertion: .scale, removal: .move(edge: .bottom)))
-            .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
-        case .composegift: ComposeGiftView(viewModel: viewModel, messages: messages)
-            .transition(AnyTransition.asymmetric(insertion: .scale, removal: .move(edge: .bottom)))
-            .animation(/*@START_MENU_TOKEN@*/.easeIn/*@END_MENU_TOKEN@*/)
+            case .none: tabview
         }
+        
     }
+    
 }
 

@@ -29,21 +29,6 @@ struct ArchiveMessageView: View {
                     }.onDelete(perform: deleteMessage)
                 }.listRowBackground(Color.black)
                 .frame(maxHeight:.infinity)
-                                
-                VStack(alignment: .center, content: {
-                    Spacer()
-                    Button("Lets go back") {
-                        viewModel.messageContainerState = .composing
-                    }
-                    .frame(width:200, height:75, alignment: .center)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                    .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
-                    .cornerRadius(10)
-                    .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                    .padding(30)
-
-                }).frame(maxWidth: .infinity, maxHeight: 100)
-         
                 Spacer()
             }.padding(.top, 75)
             .background(Color.black)

@@ -22,19 +22,7 @@ struct ComposeMessageView: View {
     var body: some View {
         
         HStack() {
-            VStack(alignment: .leading, spacing: 10) {
-                HStack() {
-                    Button(action: {
-                        viewModel.messageContainerState = .settings
-                    }) {
-                        HStack(spacing: 10) {
-                            Image("settings")
-                                .resizable()
-                                .padding(.all)
-                                .frame(width: 50, height: 50, alignment: .bottomTrailing)
-                                .edgesIgnoringSafeArea(.all)                        }
-                    }
-                }
+            VStack(alignment: .leading, spacing: 30) {
       
                 Text("Send a message to yourself into the future...")
                     .fontWeight(.semibold)
@@ -44,61 +32,47 @@ struct ComposeMessageView: View {
                     .foregroundColor(Color.white)
                     .background(Color.blue)
                     .cornerRadius(15)
-                    .padding(.horizontal, 10)
+                    .padding(.horizontal, 0)
                 ZStack(alignment: .leading) {
-
                     ZStack {
                         if message.isEmpty { Text("Tap here to start typing...").foregroundColor(.white).padding(10).background(Color.black) }
                         
                         TextEditor(text: $message)
                             .background(Color.white)
                             .foregroundColor(Color.white)
-                            .padding(10)
                             .opacity(0.6)
+                            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 100, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                             .cornerRadius(15)
-                            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     }
-    
+
                   }
-      
-                VStack(alignment: .center, content: {
-                    Button("🔭 Show sent messages") {
-                        viewModel.messageContainerState = .archive
-                    }
-                    .font(.subheadline)
-                    .cornerRadius(10)
-                    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-                    Text("or...").font(.subheadline).foregroundColor(.white).bold()
-                        .padding(10)
-                    Button("🎁 Send a message to a friend"){
-                        viewModel.messageContainerState = .composegift
-                    }.padding(20).font(.subheadline)
-                    Spacer()
-                    ZStack {
-                        Button("🚀 BLAST OFF") {
-                            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-                            if !message.isEmpty {
-                                viewModel.messageContainerState = .sending
-                                addMessage(body: message)
-                            } else {
-                                self.showingAlert = true
-                            }
-                        }.frame(maxWidth: .infinity, maxHeight: 75, alignment: .center)
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(10)
-                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                        .padding(30)
-                        .alert(isPresented: $showingAlert, content: {
-                            Alert(title: Text("Please fill in a message"), message: Text("Message can't be empty!"), dismissButton: .default(Text("Sorry, jeez")))
-                        })
-                    }
+   
+                    VStack(alignment: .leading, content: {
+                        ZStack(){
+                            Button("🚀 BLAST OFF") {
+                                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                                if !message.isEmpty {
+                                    viewModel.messageContainerState = .sending
+                                    addMessage(body: message)
+                                } else {
+                                    self.showingAlert = true
+                                }
+                            }.frame(maxWidth: .infinity, maxHeight: 75, alignment: .center)
+                            .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+                            .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
+                            .cornerRadius(10)
+                            .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+                            .padding(30)
+                            .alert(isPresented: $showingAlert, content: {
+                                Alert(title: Text("Please fill in a message"), message: Text("Message can't be empty!"), dismissButton: .default(Text("Sorry, jeez")))
+                            })
+                        }
+                    })
+             
                 
-           
-                }).frame(maxHeight: .infinity)
-         
+
                 Spacer()
-            }.padding(.top, 20)
+            }.padding(.top, 50)
         }.background(Color.black)
         .edgesIgnoringSafeArea(.all)
         .onTapGesture {
