@@ -11,19 +11,19 @@ import Messages
 import CoreData
 import AVFoundation
 
-struct ComposeMessageView: View {
 
-    var viewModel : MessageContainerViewModel
+struct ComposeMessageView: View {
+    @Binding var showOnboarding : Bool
     @State var message: String = ""
     @State private var showingAlert = false
-    let largeConfig = UIImage.SymbolConfiguration(textStyle: .largeTitle)
+    var viewModel : MessageContainerViewModel
     var messages : Messages
-
+    
     var body: some View {
-        
+
         HStack() {
             VStack(alignment: .leading, spacing: 30) {
-      
+
                 Text("Send a message to yourself into the future...")
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.leading)
@@ -69,10 +69,11 @@ struct ComposeMessageView: View {
                         }
                     })
              
-                
-
                 Spacer()
             }.padding(.top, 50)
+            .sheet(isPresented: $showOnboarding, content: {
+                OnboardingView(showingBoard: $showOnboarding)
+           })
         }.background(Color.black)
         .edgesIgnoringSafeArea(.all)
         .onTapGesture {
@@ -90,13 +91,13 @@ struct ComposeMessageView: View {
         let defaults = UserDefaults.standard
         let sender = defaults.string(forKey: "Name") ?? "You from the past"
         
-        messages.sendMessage(message: body, sender: sender)
+        messages.sendMessage(message: body, sender: sender, isGift: 0)
     }
 }
 
-
-struct ComposeMessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ComposeMessageView(viewModel : MessageContainerViewModel(), messages: Messages())
-    }
-}
+//
+//struct ComposeMessageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ComposeMessageView(viewModel : MessageContainerViewModel(), messages: Messages())
+//    }
+//}

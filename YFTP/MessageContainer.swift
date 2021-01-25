@@ -16,18 +16,23 @@ class MessageContainerViewModel: ObservableObject{
 }
 
 struct MessageContainer: View {
-    
+    let defaults = UserDefaults.standard
     @State var currentView: Int = 1
     @ObservedObject var viewModel = MessageContainerViewModel()
-    var messages = Messages()
+    @State var showingDetail : Bool = false
+    @State var showOnboarding : Bool = UserDefaults.standard.bool(forKey: "didLaunchBefore")
     
+    var messages = Messages()
+        
     var body: some View {
+                
         let tabview =  TabView(selection: $currentView) {
-            ComposeMessageView(viewModel: viewModel, messages : messages)
+            ComposeMessageView(showOnboarding: $showOnboarding, viewModel: viewModel, messages : messages)
              .tabItem {
                  Image(systemName: "square.and.pencil")
                  Text("Write")
              }.tag(1)
+              
             ComposeGiftView(viewModel: viewModel, messages: messages)
                 .tabItem {
                     Image(systemName: "gift.fill")
@@ -44,6 +49,8 @@ struct MessageContainer: View {
                  Text("Settings")
              }.tag(4)
          }
+
+        
         
         switch (viewModel.messageContainerState) {
             case .sending: SendingMessageView(viewModel: viewModel)

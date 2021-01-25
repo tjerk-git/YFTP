@@ -28,6 +28,7 @@ struct MessageJSON : Codable {
     var body : String
     var date : Double
     var sender : String
+    var isGift : Int
 }
 
 
@@ -149,6 +150,7 @@ struct ComposeGiftView: View {
             "body": body,
             "sender" : sender,
             "date" : date?.timeIntervalSinceReferenceDate ?? Date(),
+            "isGift" : 1,
         ]
         
         self.convertToJSON(messageObject: messageGift)
@@ -161,6 +163,7 @@ struct ComposeGiftView: View {
             "body": body,
             "sender" : sender,
             "date" : 0.0,
+            "isGift" : 1,
         ]
         
         self.convertToJSON(messageObject: messageGift)

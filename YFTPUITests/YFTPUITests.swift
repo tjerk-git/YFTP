@@ -27,8 +27,16 @@ class YFTPUITests: XCTestCase {
         setupSnapshot(app)
         app.launch()
         snapshot("Startup")
-        app.buttons["Show sent messages"].tap()
-        snapshot("Messages")
+        
+        let tabBar = XCUIApplication().tabBars["Tab Bar"]
+        tabBar.buttons["Gift"].tap()
+        snapshot("Gift")
+        tabBar.buttons["Archive"].tap()
+        snapshot("Archive")
+        tabBar.buttons["Settings"].tap()
+        snapshot("Settings")
+        tabBar.buttons["Write"].tap()
+        
     }
 
     func testLaunchPerformance() throws {

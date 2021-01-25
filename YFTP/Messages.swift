@@ -14,7 +14,7 @@ class Messages : ObservableObject {
     @Published public var lastMessage = ""
     
     
-    func addToCoreData(message: String, identifier: String) {
+    func addToCoreData(message: String, identifier: String, isGift: Int, sender: String) {
         let persistenceController = PersistenceController.shared
         // add to core data
         let newMessage = Message(context: persistenceController.container.viewContext)
@@ -23,25 +23,24 @@ class Messages : ObservableObject {
            newMessage.body = message
            newMessage.dateAdded = Date()
            newMessage.id = identifier
+           newMessage.isGift = (isGift != 0)
+           newMessage.sender = sender
            try? persistenceController.container.viewContext.save()
         }
     }
     
-    func sendMessage(message: String, sender: String) {
+    func sendMessage(message: String, sender: String, isGift: Int) {
         var identifier = ""
         identifier = self.setNotificationWithRandomDate(message: message, sender: sender)
-        print("random")
-        
-        self.addToCoreData(message: message, identifier: identifier)
+        self.addToCoreData(message: message, identifier: identifier, isGift: isGift, sender: sender)
         
         lastMessage = message
     }
 
-    func sendMessageWithDate(message : String, sender : String?, sendDate: Date?) {
+    func sendMessageWithDate(message : String, sender : String?, sendDate: Date?, isGift: Int) {
         var identifier = ""
         identifier = self.setNotificationWithDate(sendDate: sendDate ?? Date(), message: message, sender: sender ?? "Someone from the past")
-        print("with date")
-        self.addToCoreData(message: message, identifier: identifier)
+        self.addToCoreData(message: message, identifier: identifier, isGift: isGift, sender: sender ?? "Someone from the past")
         
         lastMessage = message
     }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var preferences : PreferenceManager = PreferenceManager()
-
+    
     var body: some View {
         switch preferences.notificationSetting {
             case .notset:

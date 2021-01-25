@@ -57,8 +57,9 @@ struct ArchiveMessageView: View {
 
 
 
-struct ArchiveMessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        ArchiveMessageView(viewModel : MessageContainerViewModel(), messages: Messages())
-    }
-}
+
+//struct ArchiveMessageView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ArchiveMessageView(viewModel : MessageContainerViewModel(), messages: Messages())
+//    }
+//}

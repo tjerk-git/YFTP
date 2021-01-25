@@ -24,9 +24,10 @@ struct YFTPApp: App {
     @State var sender = ""
     
     let persistenceController = PersistenceController.shared
+    
     var body: some Scene {
+        
         WindowGroup {
-            
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .environmentObject(messages)
@@ -35,6 +36,7 @@ struct YFTPApp: App {
                 }.sheet(isPresented: $showingDetail) {
                     MessageReceivedView(showingDetail: $showingDetail, message: receivedMessage, sender: sender)
                 }
+    
         }
     }
     
@@ -64,13 +66,14 @@ struct YFTPApp: App {
             if let message = try? decoder.decode(messageJSON.self, from: data) {
                 receivedMessage = message.body
                 sender = message.sender
+                let gift = 1
 
                 if(message.date != 0.0){
                     let convertedDate = Date(timeIntervalSinceReferenceDate: message.date)
-                    messages.sendMessageWithDate(message: message.body, sender: message.sender, sendDate: convertedDate)
+                    messages.sendMessageWithDate(message: message.body, sender: message.sender, sendDate: convertedDate, isGift: gift)
                 }
                 
-                messages.sendMessage(message: message.body, sender: sender)
+                messages.sendMessage(message: message.body, sender: sender, isGift: gift)
                 showingDetail = true
             }
         }
