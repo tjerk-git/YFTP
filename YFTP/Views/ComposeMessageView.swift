@@ -13,7 +13,6 @@ import AVFoundation
 
 
 struct ComposeMessageView: View {
-    @Binding var showOnboarding : Bool
     @State var message: String = ""
     @State private var showingAlert = false
     var viewModel : MessageContainerViewModel
@@ -71,9 +70,6 @@ struct ComposeMessageView: View {
              
                 Spacer()
             }.padding(.top, 50)
-            .sheet(isPresented: $showOnboarding, content: {
-                OnboardingView(showingBoard: $showOnboarding)
-           })
         }.background(Color.black)
         .edgesIgnoringSafeArea(.all)
         .onTapGesture {

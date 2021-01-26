@@ -28,11 +28,11 @@ struct ApplicationFeature : View {
         VStack(alignment: .center) {
             Image(systemName: self.featureImage)
                 .foregroundColor(.white)
-                .font(.largeTitle)
+                .font(.title)
                 .multilineTextAlignment(.leading)
                 .padding(10)
             Text(self.featureTitle)
-                .font(.title)
+                .font(.subheadline)
                 .foregroundColor(Color.white)
                 .bold()
                 .padding(.bottom)
