@@ -31,6 +31,21 @@
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLIconFile</key>
+			<string>/Users/td/Projects/Swift/YFTP/YFTP/Assets.xcassets/AppIcon.appiconset/80.png</string>
+			<key>CFBundleURLName</key>
+			<string>com.Tjerk.yftp</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>yftp</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>4</string>
 	<key>LSRequiresIPhoneOS</key>
@@ -113,5 +128,19 @@
 			</dict>
 		</dict>
 	</array>
+	<key>UISceneConfigurations</key>
+	<dict>
+		<key>UIWindowSceneSessionRoleApplication</key>
+		<array>
+			<dict>
+				<key>UISceneConfigurationName</key>
+				<string>Default Configuration</string>
+				<key>UISceneDelegateClassName</key>
+				<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+			</dict>
+		</array>
+	</dict>
+	<key>UIUserInterfaceStyle</key>
+	<string>Dark</string>
 </dict>
 </plist>

@@ -31,17 +31,19 @@ struct MessageContainer: View {
                  Image(systemName: "square.and.pencil")
                  Text("Write")
              }.tag(1)
-              
-            ComposeGiftView(viewModel: viewModel, messages: messages)
-                .tabItem {
-                    Image(systemName: "gift.fill")
-                    Text("Gift")
-                }.tag(2)
+            
             ArchiveMessageView(viewModel: viewModel, messages : messages)
              .tabItem {
                  Image(systemName: "memories")
                  Text("Archive")
-             }.tag(3)
+             }.tag(2)
+            
+            ComposeGiftView(viewModel: viewModel, messages: messages)
+                .tabItem {
+                    Image(systemName: "gift.fill")
+                    Text("Gift")
+                }.tag(3)
+  
             SettingsView(viewModel: viewModel)
              .tabItem {
                  Image(systemName: "gear")

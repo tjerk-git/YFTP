@@ -25,6 +25,7 @@
 		736966192584FF1F007D6438 /* GifPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736966182584FF1F007D6438 /* GifPlayerView.swift */; };
 		736966272586A5B9007D6438 /* YFTP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 736966252586A5B9007D6438 /* YFTP.xcdatamodeld */; };
 		7369662E2586A957007D6438 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369662D2586A957007D6438 /* Persistence.swift */; };
+		736E1AAA25C0B9D60075BC95 /* 80.png in Resources */ = {isa = PBXBuildFile; fileRef = 736E1AA925C0B9D50075BC95 /* 80.png */; };
 		73831392257F6FFB00591C6F /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73831391257F6FFB00591C6F /* PermissionView.swift */; };
 		73831397257F702700591C6F /* ComposeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73831396257F702700591C6F /* ComposeMessageView.swift */; };
 		7386646225B0D737005942D9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386646125B0D737005942D9 /* SettingsView.swift */; };
@@ -35,6 +36,7 @@
 		73B17BC1258379750018069E /* MessageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BC0258379750018069E /* MessageContainer.swift */; };
 		73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC13B425BC7E50006C9A5B /* OnboardingView.swift */; };
 		73CB5A8625A85CE400151AD7 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB5A8525A85CE400151AD7 /* SnapshotHelper.swift */; };
+		73E2DB3A25C44B4C00CA461C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,7 @@
 		736966182584FF1F007D6438 /* GifPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifPlayerView.swift; sourceTree = "<group>"; };
 		736966262586A5B9007D6438 /* YFTP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = YFTP.xcdatamodel; sourceTree = "<group>"; };
 		7369662D2586A957007D6438 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		736E1AA925C0B9D50075BC95 /* 80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 80.png; path = YFTP/Assets.xcassets/AppIcon.appiconset/80.png; sourceTree = "<group>"; };
 		73831391257F6FFB00591C6F /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		73831396257F702700591C6F /* ComposeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeMessageView.swift; sourceTree = "<group>"; };
 		7386646125B0D737005942D9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -89,6 +92,7 @@
 		73B17BC0258379750018069E /* MessageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContainer.swift; sourceTree = "<group>"; };
 		73BC13B425BC7E50006C9A5B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		73CB5A8525A85CE400151AD7 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = YFTPTests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +140,7 @@
 		735E44A1257AF7A600D5317C = {
 			isa = PBXGroup;
 			children = (
+				736E1AA925C0B9D50075BC95 /* 80.png */,
 				739333CA25A340EC0070B000 /* .Gemfile */,
 				736966252586A5B9007D6438 /* YFTP.xcdatamodeld */,
 				735E44AC257AF7A600D5317C /* YFTP */,
@@ -173,6 +178,7 @@
 				7369662D2586A957007D6438 /* Persistence.swift */,
 				73487F3725B39CE80029E773 /* AppDelegate.swift */,
 				7328AF8B25BF0D4000CC9AB2 /* ApplicationFeature.swift */,
+				73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */,
 			);
 			path = YFTP;
 			sourceTree = "<group>";
@@ -308,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				739333CB25A340EC0070B000 /* .Gemfile in Resources */,
+				736E1AAA25C0B9D60075BC95 /* 80.png in Resources */,
 				735E44B5257AF7A700D5317C /* Preview Assets.xcassets in Resources */,
 				735E44B2257AF7A700D5317C /* Assets.xcassets in Resources */,
 			);
@@ -340,6 +347,7 @@
 				732F297725839F940072FFE2 /* SendingMessageView.swift in Sources */,
 				7344B7D7258A54F500F75C7A /* ArchiveMessageView.swift in Sources */,
 				73AC3733258AB1FF0008C19A /* MessageRow.swift in Sources */,
+				73E2DB3A25C44B4C00CA461C /* SceneDelegate.swift in Sources */,
 				73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */,
 				73831392257F6FFB00591C6F /* PermissionView.swift in Sources */,
 				734A0B9125B5A0F4007BE57C /* ComposeGiftView.swift in Sources */,
