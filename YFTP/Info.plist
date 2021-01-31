@@ -65,6 +65,18 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UISceneConfigurations</key>
+	<dict>
+		<key>UIWindowSceneSessionRoleApplication</key>
+		<array>
+			<dict>
+				<key>UISceneConfigurationName</key>
+				<string>Default Configuration</string>
+				<key>UISceneDelegateClassName</key>
+				<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
+			</dict>
+		</array>
+	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -76,6 +88,8 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Dark</string>
 	<key>UTExportedTypeDeclarations</key>
 	<array>
 		<dict>
@@ -128,19 +142,5 @@
 			</dict>
 		</dict>
 	</array>
-	<key>UISceneConfigurations</key>
-	<dict>
-		<key>UIWindowSceneSessionRoleApplication</key>
-		<array>
-			<dict>
-				<key>UISceneConfigurationName</key>
-				<string>Default Configuration</string>
-				<key>UISceneDelegateClassName</key>
-				<string>$(PRODUCT_MODULE_NAME).SceneDelegate</string>
-			</dict>
-		</array>
-	</dict>
-	<key>UIUserInterfaceStyle</key>
-	<string>Dark</string>
 </dict>
 </plist>

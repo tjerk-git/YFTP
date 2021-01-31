@@ -33,39 +33,13 @@ struct YFTPApp: App {
                 .environmentObject(messages)
                 .onOpenURL { url in
                     self.importJSON(url: url)
-                    //self.downloadJSONFromScheme(url : url)
                 }.sheet(isPresented: $showingDetail) {
                     MessageReceivedView(showingDetail: $showingDetail, message: receivedMessage, sender: sender)
                 }
     
         }
     }
-    
-//    func downloadJSONFromScheme( url : URL){
-//
-//        let downloadTask = URLSession.shared.downloadTask(with: url) {
-//            urlOrNil, responseOrNil, errorOrNil in
-//            // check for and handle errors:
-//            // * errorOrNil should be nil
-//            // * responseOrNil should be an HTTPURLResponse with statusCode in 200..<299
-//
-//            guard let fileURL = urlOrNil else { return }
-//            do {
-//                let documentsURL = try
-//                    FileManager.default.url(for: .documentDirectory,
-//                                            in: .userDomainMask,
-//                                            appropriateFor: nil,
-//                                            create: false)
-//                let savedURL = documentsURL.appendingPathComponent(fileURL.lastPathComponent)
-//                try FileManager.default.moveItem(at: fileURL, to: savedURL)
-//            } catch {
-//                print ("file error: \(error)")
-//            }
-//        }
-//
-//        downloadTask.resume()
-//    }
-//
+
     
     func importJSON (url : URL) {
         do {
@@ -130,4 +104,11 @@ struct YFTPApp: App {
     }
     
 
+}
+
+extension URL {
+    func valueOf(_ queryParamaterName: String) -> String? {
+        guard let url = URLComponents(string: self.absoluteString) else { return nil }
+        return url.queryItems?.first(where: { $0.name == queryParamaterName })?.value
+    }
 }

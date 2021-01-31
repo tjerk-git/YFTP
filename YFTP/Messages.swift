@@ -79,8 +79,14 @@ class Messages : ObservableObject {
         let currentday = calendar.component(.day, from: date)
         let minute = Int.random(in: 8...59)
         let hour = Int.random(in: 8...18)
-        let day = Int.random(in: currentday...28)
-
+        let endOfMonthDate = Date().endOfMonth()
+        let endOfMonth = calendar.component(.day, from: endOfMonthDate)
+        var day = 1
+        
+        if (endOfMonth != currentday) {
+            day = Int.random(in: currentday...endOfMonth)
+        }
+        
         // end of the month, go to next month, end of the year? stay in this year.
         if(currentday >= 25 && month != 12){
             month += 1
@@ -93,6 +99,9 @@ class Messages : ObservableObject {
         
         return request.identifier
     }
+    
+    
+    
     
 //    func getUpcomingNotification() {
 //        UNUserNotificationCenter.current().getPendingNotificationRequests {
@@ -113,4 +122,13 @@ class Messages : ObservableObject {
 //            }
 //        }
 //    }
+}
+extension Date {
+    func startOfMonth() -> Date {
+        return Calendar.current.date(from: Calendar.current.dateComponents([.year, .month], from: Calendar.current.startOfDay(for: self)))!
+    }
+    
+    func endOfMonth() -> Date {
+        return Calendar.current.date(byAdding: DateComponents(month: 1, day: -1), to: self.startOfMonth())!
+    }
 }

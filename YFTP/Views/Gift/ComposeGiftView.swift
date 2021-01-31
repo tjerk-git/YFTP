@@ -102,7 +102,6 @@ struct ComposeGiftView: View {
                 VStack(alignment: .center, content: {
                     ZStack {
                         Button("🚀 BLAST OFF") {
-                            AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
                             if !message.isEmpty {
                                 username = defaults.string(forKey: "Name") ?? "Someone from the past"
                                 if(pickADate){
