@@ -13,31 +13,38 @@ struct MessageRow: View {
   var body: some View {
     VStack(alignment: .leading) {
         
-        if(opacity != 0.5){
+        if(opacity != 0.5 || message.hasBeenSeen != (0 != 0)){
             message.body.map(Text.init)
               .font(.body)
-              .padding(5)
-              if(message.dateAdded != nil) {
-                  Text("added: \(message.dateAdded!, formatter: Self.taskDateFormat)").font(/*@START_MENU_TOKEN@*/.caption2/*@END_MENU_TOKEN@*/).fontWeight(.thin).multilineTextAlignment(.trailing).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-              }
+              .padding(0)
+
         } else {
-            Image(systemName: "hand.draw.fill").foregroundColor(.white)
-            Text("Hold to reveal message").foregroundColor(.white).opacity(1.0).padding(5)
+            Button(action: {
+                opacity = 1
+                if(message.id != nil){
+                    Messages().updateMessageToSeen(id: message.id!)
+                }
+               
+            }) {
+                HStack(spacing: 10) {
+                    Image(systemName: "eye.fill")
+                    Text("Tap to reveal message")
+                }
+            }
+            
+            if(message.dateAdded != nil) {
+                Text("\(message.dateAdded!, formatter: Self.taskDateFormat)").font(/*@START_MENU_TOKEN@*/.caption2/*@END_MENU_TOKEN@*/).fontWeight(.thin).multilineTextAlignment(.trailing).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
+            }
         }
         
         if(message.isGift) {
-            Text("Is a gift from \(message.sender ?? "Someone")").font(/*@START_MENU_TOKEN@*/.caption2/*@END_MENU_TOKEN@*/).fontWeight(.thin).multilineTextAlignment(.trailing).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-            Image(systemName: "gift.fill").foregroundColor(.white).padding(5)
+            Text("this is a gift from: \(message.sender ?? "Someone")").font(/*@START_MENU_TOKEN@*/.caption2/*@END_MENU_TOKEN@*/).fontWeight(.thin).multilineTextAlignment(.trailing).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
         }
 
     }
     .opacity(opacity)
     .transition(.identity)
-    .onLongPressGesture(minimumDuration: 0.1) {
-        withAnimation(.easeInOut(duration: 1)) {
-            opacity = 1.0
-        }
-    }
+    
   }
 }
 

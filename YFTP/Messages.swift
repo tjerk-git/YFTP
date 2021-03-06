@@ -29,6 +29,43 @@ class Messages : ObservableObject {
         }
     }
     
+    func getMessage(id : String) -> Message {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Message")
+        fetchRequest.predicate = NSPredicate(format: "id = %@", id)
+        var message = Message()
+        
+        do {
+            let persistenceController = PersistenceController.shared
+            let messages = try persistenceController.container.viewContext.fetch(fetchRequest)
+            assert(messages.count < 2) // we shouldn't have any duplicates in CD
+
+            if (messages.first as? Message) != nil {
+                // we've got the profile already cached!
+                message =  messages.first as! Message
+            } else {
+                // no local cache yet, use placeholder for now
+            }
+            
+            message = messages.first as! Message
+        } catch {
+            // handle error
+        }
+        
+        return message
+    }
+    
+    func updateMessageToSeen(id: String) {
+        let message = self.getMessage(id: id)
+        
+        let persistenceController = PersistenceController.shared
+        
+        persistenceController.container.viewContext.performAndWait {
+            message.hasBeenSeen = (1 != 0)
+           try? persistenceController.container.viewContext.save()
+        }
+        
+    }
+    
     func sendMessage(message: String, sender: String, isGift: Int) {
         var identifier = ""
         identifier = self.setNotificationWithRandomDate(message: message, sender: sender)

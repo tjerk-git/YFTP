@@ -35,6 +35,13 @@
 		73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC13B425BC7E50006C9A5B /* OnboardingView.swift */; };
 		73CB5A8625A85CE400151AD7 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB5A8525A85CE400151AD7 /* SnapshotHelper.swift */; };
 		73E2DB3A25C44B4C00CA461C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */; };
+		A0C00A2B25F3D1BD00A2C045 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C00A2A25F3D1BD00A2C045 /* WidgetKit.framework */; };
+		A0C00A2D25F3D1BD00A2C045 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C00A2C25F3D1BD00A2C045 /* SwiftUI.framework */; };
+		A0C00A3025F3D1BD00A2C045 /* YFTPWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C00A2F25F3D1BD00A2C045 /* YFTPWidget.swift */; };
+		A0C00A3325F3D1BE00A2C045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C00A3225F3D1BE00A2C045 /* Assets.xcassets */; };
+		A0C00A3525F3D1BE00A2C045 /* YFTPWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A0C00A3125F3D1BD00A2C045 /* YFTPWidget.intentdefinition */; };
+		A0C00A3625F3D1BE00A2C045 /* YFTPWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A0C00A3125F3D1BD00A2C045 /* YFTPWidget.intentdefinition */; };
+		A0C00A3925F3D1BE00A2C045 /* YFTPWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0C00A2825F3D1BD00A2C045 /* YFTPWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +59,28 @@
 			remoteGlobalIDString = 735E44A9257AF7A600D5317C;
 			remoteInfo = YFTP;
 		};
+		A0C00A3725F3D1BE00A2C045 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 735E44A2257AF7A600D5317C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A0C00A2725F3D1BD00A2C045;
+			remoteInfo = YFTPWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		A0C00A3A25F3D1BE00A2C045 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				A0C00A3925F3D1BE00A2C045 /* YFTPWidgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7328AF8B25BF0D4000CC9AB2 /* ApplicationFeature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFeature.swift; sourceTree = "<group>"; };
@@ -89,6 +117,13 @@
 		73BC13B425BC7E50006C9A5B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		73CB5A8525A85CE400151AD7 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = YFTPTests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A0C00A2825F3D1BD00A2C045 /* YFTPWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = YFTPWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0C00A2A25F3D1BD00A2C045 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		A0C00A2C25F3D1BD00A2C045 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A0C00A2F25F3D1BD00A2C045 /* YFTPWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFTPWidget.swift; sourceTree = "<group>"; };
+		A0C00A3125F3D1BD00A2C045 /* YFTPWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = YFTPWidget.intentdefinition; sourceTree = "<group>"; };
+		A0C00A3225F3D1BE00A2C045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A0C00A3425F3D1BE00A2C045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +145,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0C00A2525F3D1BD00A2C045 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C00A2D25F3D1BD00A2C045 /* SwiftUI.framework in Frameworks */,
+				A0C00A2B25F3D1BD00A2C045 /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +180,8 @@
 				735E44AC257AF7A600D5317C /* YFTP */,
 				735E44BE257AF7A700D5317C /* YFTPTests */,
 				735E44C9257AF7A700D5317C /* YFTPUITests */,
+				A0C00A2E25F3D1BD00A2C045 /* YFTPWidget */,
+				A0C00A2925F3D1BD00A2C045 /* Frameworks */,
 				735E44AB257AF7A600D5317C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -146,6 +192,7 @@
 				735E44AA257AF7A600D5317C /* YFTP.app */,
 				735E44BB257AF7A700D5317C /* YFTPTests.xctest */,
 				735E44C6257AF7A700D5317C /* YFTPUITests.xctest */,
+				A0C00A2825F3D1BD00A2C045 /* YFTPWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,6 +291,26 @@
 			path = Gift;
 			sourceTree = "<group>";
 		};
+		A0C00A2925F3D1BD00A2C045 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A0C00A2A25F3D1BD00A2C045 /* WidgetKit.framework */,
+				A0C00A2C25F3D1BD00A2C045 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A0C00A2E25F3D1BD00A2C045 /* YFTPWidget */ = {
+			isa = PBXGroup;
+			children = (
+				A0C00A2F25F3D1BD00A2C045 /* YFTPWidget.swift */,
+				A0C00A3125F3D1BD00A2C045 /* YFTPWidget.intentdefinition */,
+				A0C00A3225F3D1BE00A2C045 /* Assets.xcassets */,
+				A0C00A3425F3D1BE00A2C045 /* Info.plist */,
+			);
+			path = YFTPWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,10 +321,12 @@
 				735E44A6257AF7A600D5317C /* Sources */,
 				735E44A7257AF7A600D5317C /* Frameworks */,
 				735E44A8257AF7A600D5317C /* Resources */,
+				A0C00A3A25F3D1BE00A2C045 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				A0C00A3825F3D1BE00A2C045 /* PBXTargetDependency */,
 			);
 			name = YFTP;
 			productName = YFTP;
@@ -300,13 +369,30 @@
 			productReference = 735E44C6257AF7A700D5317C /* YFTPUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		A0C00A2725F3D1BD00A2C045 /* YFTPWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0C00A3D25F3D1BE00A2C045 /* Build configuration list for PBXNativeTarget "YFTPWidgetExtension" */;
+			buildPhases = (
+				A0C00A2425F3D1BD00A2C045 /* Sources */,
+				A0C00A2525F3D1BD00A2C045 /* Frameworks */,
+				A0C00A2625F3D1BD00A2C045 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YFTPWidgetExtension;
+			productName = YFTPWidgetExtension;
+			productReference = A0C00A2825F3D1BD00A2C045 /* YFTPWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		735E44A2257AF7A600D5317C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1220;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1220;
 				TargetAttributes = {
 					735E44A9257AF7A600D5317C = {
@@ -319,6 +405,9 @@
 					735E44C5257AF7A700D5317C = {
 						CreatedOnToolsVersion = 12.2;
 						TestTargetID = 735E44A9257AF7A600D5317C;
+					};
+					A0C00A2725F3D1BD00A2C045 = {
+						CreatedOnToolsVersion = 12.4;
 					};
 				};
 			};
@@ -338,6 +427,7 @@
 				735E44A9257AF7A600D5317C /* YFTP */,
 				735E44BA257AF7A700D5317C /* YFTPTests */,
 				735E44C5257AF7A700D5317C /* YFTPUITests */,
+				A0C00A2725F3D1BD00A2C045 /* YFTPWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -363,6 +453,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A0C00A2625F3D1BD00A2C045 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C00A3325F3D1BE00A2C045 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +490,7 @@
 				7328AF8C25BF0D4000CC9AB2 /* ApplicationFeature.swift in Sources */,
 				73487F0425B1E5A30029E773 /* MessageReceivedView.swift in Sources */,
 				73831397257F702700591C6F /* ComposeMessageView.swift in Sources */,
+				A0C00A3625F3D1BE00A2C045 /* YFTPWidget.intentdefinition in Sources */,
 				738D5E1D2584E77300F8A181 /* SentMessageView.swift in Sources */,
 				734A0B9625B5ACC8007BE57C /* ActivityViewController.swift in Sources */,
 				73487F3825B39CE80029E773 /* AppDelegate.swift in Sources */,
@@ -416,6 +515,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		A0C00A2425F3D1BD00A2C045 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A0C00A3025F3D1BD00A2C045 /* YFTPWidget.swift in Sources */,
+				A0C00A3525F3D1BE00A2C045 /* YFTPWidget.intentdefinition in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -428,6 +536,11 @@
 			isa = PBXTargetDependency;
 			target = 735E44A9257AF7A600D5317C /* YFTP */;
 			targetProxy = 735E44C7257AF7A700D5317C /* PBXContainerItemProxy */;
+		};
+		A0C00A3825F3D1BE00A2C045 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A0C00A2725F3D1BD00A2C045 /* YFTPWidgetExtension */;
+			targetProxy = A0C00A3725F3D1BE00A2C045 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -551,6 +664,7 @@
 		735E44D0257AF7A700D5317C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -575,6 +689,7 @@
 		735E44D1257AF7A700D5317C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -680,6 +795,50 @@
 			};
 			name = Release;
 		};
+		A0C00A3B25F3D1BE00A2C045 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9KK68PA63;
+				INFOPLIST_FILE = YFTPWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tjerk.yftp.YFTPWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A0C00A3C25F3D1BE00A2C045 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P9KK68PA63;
+				INFOPLIST_FILE = YFTPWidget/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Tjerk.yftp.YFTPWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -715,6 +874,15 @@
 			buildConfigurations = (
 				735E44D6257AF7A700D5317C /* Debug */,
 				735E44D7257AF7A700D5317C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0C00A3D25F3D1BE00A2C045 /* Build configuration list for PBXNativeTarget "YFTPWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A0C00A3B25F3D1BE00A2C045 /* Debug */,
+				A0C00A3C25F3D1BE00A2C045 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
