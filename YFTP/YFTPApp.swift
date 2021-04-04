@@ -16,7 +16,6 @@ struct messageJSON : Codable {
 
 @main
 struct YFTPApp: App {
-    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 
     @StateObject var messages = Messages()
     @State var showingDetail : Bool = false

@@ -32,9 +32,11 @@ struct MessageRow: View {
                 }
             }
             
-            if(message.dateAdded != nil) {
-                Text("\(message.dateAdded!, formatter: Self.taskDateFormat)").font(/*@START_MENU_TOKEN@*/.caption2/*@END_MENU_TOKEN@*/).fontWeight(.thin).multilineTextAlignment(.trailing).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/)
-            }
+
+        }
+        
+        if(message.dateAdded != nil) {
+            Text("\(message.dateAdded!, formatter: Self.taskDateFormat)").font(/*@START_MENU_TOKEN@*/.caption2/*@END_MENU_TOKEN@*/).fontWeight(.thin).multilineTextAlignment(.trailing).opacity(/*@START_MENU_TOKEN@*/0.8/*@END_MENU_TOKEN@*/).padding(3)
         }
         
         if(message.isGift) {

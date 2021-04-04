@@ -26,29 +26,32 @@ struct MessageContainer: View {
     var body: some View {
                 
         let tabview =  TabView(selection: $currentView) {
+            
+            DashBoardView(viewModel: viewModel)
+             .tabItem {
+                 Image(systemName: "note.text")
+                 Text("From you:")
+             }.tag(1)
+            
             ComposeMessageView(viewModel: viewModel, messages : messages)
              .tabItem {
                  Image(systemName: "square.and.pencil")
-                 Text("Write")
-             }.tag(1)
+                 Text("Compose")
+             }.tag(2)
             
             ArchiveMessageView(viewModel: viewModel, messages : messages)
              .tabItem {
                  Image(systemName: "memories")
                  Text("Archive")
-             }.tag(2)
+             }.tag(3)
             
             ComposeGiftView(viewModel: viewModel, messages: messages)
                 .tabItem {
                     Image(systemName: "gift.fill")
                     Text("Gift")
-                }.tag(3)
+                }.tag(4)
   
-            SettingsView(viewModel: viewModel)
-             .tabItem {
-                 Image(systemName: "gear")
-                 Text("Settings")
-             }.tag(4)
+
          }
 
         switch (viewModel.messageContainerState) {

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,7 +12,6 @@
 		732F297F2583AB230072FFE2 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 732F297E2583AB230072FFE2 /* Messages.swift */; };
 		7344B7D7258A54F500F75C7A /* ArchiveMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7344B7D6258A54F500F75C7A /* ArchiveMessageView.swift */; };
 		73487F0425B1E5A30029E773 /* MessageReceivedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73487F0325B1E5A30029E773 /* MessageReceivedView.swift */; };
-		73487F3825B39CE80029E773 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73487F3725B39CE80029E773 /* AppDelegate.swift */; };
 		734A0B9125B5A0F4007BE57C /* ComposeGiftView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A0B9025B5A0F4007BE57C /* ComposeGiftView.swift */; };
 		734A0B9625B5ACC8007BE57C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A0B9525B5ACC8007BE57C /* ActivityViewController.swift */; };
 		734A0B9B25B5C99E007BE57C /* ShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734A0B9A25B5C99E007BE57C /* ShareSheet.swift */; };
@@ -21,7 +20,6 @@
 		735E44B2257AF7A700D5317C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 735E44B1257AF7A700D5317C /* Assets.xcassets */; };
 		735E44B5257AF7A700D5317C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 735E44B4257AF7A700D5317C /* Preview Assets.xcassets */; };
 		735E44C0257AF7A700D5317C /* YFTPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E44BF257AF7A700D5317C /* YFTPTests.swift */; };
-		735E44CB257AF7A700D5317C /* YFTPUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735E44CA257AF7A700D5317C /* YFTPUITests.swift */; };
 		736966192584FF1F007D6438 /* GifPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736966182584FF1F007D6438 /* GifPlayerView.swift */; };
 		736966272586A5B9007D6438 /* YFTP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 736966252586A5B9007D6438 /* YFTP.xcdatamodeld */; };
 		7369662E2586A957007D6438 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369662D2586A957007D6438 /* Persistence.swift */; };
@@ -33,15 +31,12 @@
 		73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BBB25836E4E0018069E /* PreferenceManager.swift */; };
 		73B17BC1258379750018069E /* MessageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BC0258379750018069E /* MessageContainer.swift */; };
 		73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC13B425BC7E50006C9A5B /* OnboardingView.swift */; };
-		73CB5A8625A85CE400151AD7 /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CB5A8525A85CE400151AD7 /* SnapshotHelper.swift */; };
 		73E2DB3A25C44B4C00CA461C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */; };
-		A0C00A2B25F3D1BD00A2C045 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C00A2A25F3D1BD00A2C045 /* WidgetKit.framework */; };
-		A0C00A2D25F3D1BD00A2C045 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0C00A2C25F3D1BD00A2C045 /* SwiftUI.framework */; };
-		A0C00A3025F3D1BD00A2C045 /* YFTPWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C00A2F25F3D1BD00A2C045 /* YFTPWidget.swift */; };
-		A0C00A3325F3D1BE00A2C045 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0C00A3225F3D1BE00A2C045 /* Assets.xcassets */; };
-		A0C00A3525F3D1BE00A2C045 /* YFTPWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A0C00A3125F3D1BD00A2C045 /* YFTPWidget.intentdefinition */; };
-		A0C00A3625F3D1BE00A2C045 /* YFTPWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = A0C00A3125F3D1BD00A2C045 /* YFTPWidget.intentdefinition */; };
-		A0C00A3925F3D1BE00A2C045 /* YFTPWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = A0C00A2825F3D1BD00A2C045 /* YFTPWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		A0BA3F792619C35900123904 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3F782619C35900123904 /* DashBoardView.swift */; };
+		A0BA3F7E2619C73400123904 /* CardStack in Frameworks */ = {isa = PBXBuildFile; productRef = A0BA3F7D2619C73400123904 /* CardStack */; };
+		A0BA3F9B2619D1A600123904 /* MessageCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3F9A2619D1A600123904 /* MessageCardData.swift */; };
+		A0BA3F9F2619D1B500123904 /* StackExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3F9E2619D1B500123904 /* StackExampleView.swift */; };
+		A0BA3FA32619D1BC00123904 /* CardExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3FA22619D1BC00123904 /* CardExampleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,20 +47,6 @@
 			remoteGlobalIDString = 735E44A9257AF7A600D5317C;
 			remoteInfo = YFTP;
 		};
-		735E44C7257AF7A700D5317C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 735E44A2257AF7A600D5317C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 735E44A9257AF7A600D5317C;
-			remoteInfo = YFTP;
-		};
-		A0C00A3725F3D1BE00A2C045 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 735E44A2257AF7A600D5317C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A0C00A2725F3D1BD00A2C045;
-			remoteInfo = YFTPWidgetExtension;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -75,7 +56,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				A0C00A3925F3D1BE00A2C045 /* YFTPWidgetExtension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -88,7 +68,6 @@
 		732F297E2583AB230072FFE2 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		7344B7D6258A54F500F75C7A /* ArchiveMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArchiveMessageView.swift; sourceTree = "<group>"; };
 		73487F0325B1E5A30029E773 /* MessageReceivedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageReceivedView.swift; sourceTree = "<group>"; };
-		73487F3725B39CE80029E773 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		734A0B9025B5A0F4007BE57C /* ComposeGiftView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeGiftView.swift; sourceTree = "<group>"; };
 		734A0B9525B5ACC8007BE57C /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		734A0B9A25B5C99E007BE57C /* ShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareSheet.swift; sourceTree = "<group>"; };
@@ -101,7 +80,6 @@
 		735E44BB257AF7A700D5317C /* YFTPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YFTPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		735E44BF257AF7A700D5317C /* YFTPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFTPTests.swift; sourceTree = "<group>"; };
 		735E44C1257AF7A700D5317C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		735E44C6257AF7A700D5317C /* YFTPUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YFTPUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		735E44CA257AF7A700D5317C /* YFTPUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFTPUITests.swift; sourceTree = "<group>"; };
 		735E44CC257AF7A700D5317C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		736966182584FF1F007D6438 /* GifPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifPlayerView.swift; sourceTree = "<group>"; };
@@ -115,15 +93,13 @@
 		73B17BBB25836E4E0018069E /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		73B17BC0258379750018069E /* MessageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContainer.swift; sourceTree = "<group>"; };
 		73BC13B425BC7E50006C9A5B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		73CB5A8525A85CE400151AD7 /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = YFTPTests/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
 		73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A0C00A2825F3D1BD00A2C045 /* YFTPWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = YFTPWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0BA3F782619C35900123904 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
+		A0BA3F9A2619D1A600123904 /* MessageCardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCardData.swift; sourceTree = "<group>"; };
+		A0BA3F9E2619D1B500123904 /* StackExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackExampleView.swift; sourceTree = "<group>"; };
+		A0BA3FA22619D1BC00123904 /* CardExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExampleView.swift; sourceTree = "<group>"; };
 		A0C00A2A25F3D1BD00A2C045 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A0C00A2C25F3D1BD00A2C045 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		A0C00A2F25F3D1BD00A2C045 /* YFTPWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YFTPWidget.swift; sourceTree = "<group>"; };
-		A0C00A3125F3D1BD00A2C045 /* YFTPWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = YFTPWidget.intentdefinition; sourceTree = "<group>"; };
-		A0C00A3225F3D1BE00A2C045 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A0C00A3425F3D1BE00A2C045 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A0BA3F7E2619C73400123904 /* CardStack in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,34 +118,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		735E44C3257AF7A700D5317C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0C00A2525F3D1BD00A2C045 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0C00A2D25F3D1BD00A2C045 /* SwiftUI.framework in Frameworks */,
-				A0C00A2B25F3D1BD00A2C045 /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		7328AF9025BF143C00CC9AB2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				A0BA3FA22619D1BC00123904 /* CardExampleView.swift */,
+				A0BA3F9E2619D1B500123904 /* StackExampleView.swift */,
 				73E2DB4825C44D7500CA461C /* Gift */,
 				73E2DB4725C44D6800CA461C /* Setup */,
 				73E2DB4625C44D4800CA461C /* Compose */,
 				73E2DB4525C44D3500CA461C /* Settings */,
 				73E2DB4425C44D1900CA461C /* Archive */,
 				735E44AF257AF7A600D5317C /* ContentView.swift */,
+				A0BA3F782619C35900123904 /* DashBoardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,7 +144,6 @@
 				735E44AC257AF7A600D5317C /* YFTP */,
 				735E44BE257AF7A700D5317C /* YFTPTests */,
 				735E44C9257AF7A700D5317C /* YFTPUITests */,
-				A0C00A2E25F3D1BD00A2C045 /* YFTPWidget */,
 				A0C00A2925F3D1BD00A2C045 /* Frameworks */,
 				735E44AB257AF7A600D5317C /* Products */,
 			);
@@ -191,8 +154,6 @@
 			children = (
 				735E44AA257AF7A600D5317C /* YFTP.app */,
 				735E44BB257AF7A700D5317C /* YFTPTests.xctest */,
-				735E44C6257AF7A700D5317C /* YFTPUITests.xctest */,
-				A0C00A2825F3D1BD00A2C045 /* YFTPWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -200,6 +161,7 @@
 		735E44AC257AF7A600D5317C /* YFTP */ = {
 			isa = PBXGroup;
 			children = (
+				A0BA3F992619D18D00123904 /* Models */,
 				7328AF9025BF143C00CC9AB2 /* Views */,
 				735E44AD257AF7A600D5317C /* YFTPApp.swift */,
 				73B17BC0258379750018069E /* MessageContainer.swift */,
@@ -209,7 +171,6 @@
 				735E44B6257AF7A700D5317C /* Info.plist */,
 				735E44B3257AF7A700D5317C /* Preview Content */,
 				7369662D2586A957007D6438 /* Persistence.swift */,
-				73487F3725B39CE80029E773 /* AppDelegate.swift */,
 				73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */,
 			);
 			path = YFTP;
@@ -236,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				735E44CA257AF7A700D5317C /* YFTPUITests.swift */,
-				73CB5A8525A85CE400151AD7 /* SnapshotHelper.swift */,
 				735E44CC257AF7A700D5317C /* Info.plist */,
 			);
 			path = YFTPUITests;
@@ -291,6 +251,14 @@
 			path = Gift;
 			sourceTree = "<group>";
 		};
+		A0BA3F992619D18D00123904 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A0BA3F9A2619D1A600123904 /* MessageCardData.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		A0C00A2925F3D1BD00A2C045 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,17 +266,6 @@
 				A0C00A2C25F3D1BD00A2C045 /* SwiftUI.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		A0C00A2E25F3D1BD00A2C045 /* YFTPWidget */ = {
-			isa = PBXGroup;
-			children = (
-				A0C00A2F25F3D1BD00A2C045 /* YFTPWidget.swift */,
-				A0C00A3125F3D1BD00A2C045 /* YFTPWidget.intentdefinition */,
-				A0C00A3225F3D1BE00A2C045 /* Assets.xcassets */,
-				A0C00A3425F3D1BE00A2C045 /* Info.plist */,
-			);
-			path = YFTPWidget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -326,9 +283,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				A0C00A3825F3D1BE00A2C045 /* PBXTargetDependency */,
 			);
 			name = YFTP;
+			packageProductDependencies = (
+				A0BA3F7D2619C73400123904 /* CardStack */,
+			);
 			productName = YFTP;
 			productReference = 735E44AA257AF7A600D5317C /* YFTP.app */;
 			productType = "com.apple.product-type.application";
@@ -351,41 +310,6 @@
 			productReference = 735E44BB257AF7A700D5317C /* YFTPTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		735E44C5257AF7A700D5317C /* YFTPUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 735E44D5257AF7A700D5317C /* Build configuration list for PBXNativeTarget "YFTPUITests" */;
-			buildPhases = (
-				735E44C2257AF7A700D5317C /* Sources */,
-				735E44C3257AF7A700D5317C /* Frameworks */,
-				735E44C4257AF7A700D5317C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				735E44C8257AF7A700D5317C /* PBXTargetDependency */,
-			);
-			name = YFTPUITests;
-			productName = YFTPUITests;
-			productReference = 735E44C6257AF7A700D5317C /* YFTPUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
-		A0C00A2725F3D1BD00A2C045 /* YFTPWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A0C00A3D25F3D1BE00A2C045 /* Build configuration list for PBXNativeTarget "YFTPWidgetExtension" */;
-			buildPhases = (
-				A0C00A2425F3D1BD00A2C045 /* Sources */,
-				A0C00A2525F3D1BD00A2C045 /* Frameworks */,
-				A0C00A2625F3D1BD00A2C045 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = YFTPWidgetExtension;
-			productName = YFTPWidgetExtension;
-			productReference = A0C00A2825F3D1BD00A2C045 /* YFTPWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -402,13 +326,6 @@
 						CreatedOnToolsVersion = 12.2;
 						TestTargetID = 735E44A9257AF7A600D5317C;
 					};
-					735E44C5257AF7A700D5317C = {
-						CreatedOnToolsVersion = 12.2;
-						TestTargetID = 735E44A9257AF7A600D5317C;
-					};
-					A0C00A2725F3D1BD00A2C045 = {
-						CreatedOnToolsVersion = 12.4;
-					};
 				};
 			};
 			buildConfigurationList = 735E44A5257AF7A600D5317C /* Build configuration list for PBXProject "YFTP" */;
@@ -420,14 +337,15 @@
 				Base,
 			);
 			mainGroup = 735E44A1257AF7A600D5317C;
+			packageReferences = (
+				A0BA3F7C2619C73400123904 /* XCRemoteSwiftPackageReference "CardStack" */,
+			);
 			productRefGroup = 735E44AB257AF7A600D5317C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				735E44A9257AF7A600D5317C /* YFTP */,
 				735E44BA257AF7A700D5317C /* YFTPTests */,
-				735E44C5257AF7A700D5317C /* YFTPUITests */,
-				A0C00A2725F3D1BD00A2C045 /* YFTPWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -449,21 +367,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		735E44C4257AF7A700D5317C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0C00A2625F3D1BD00A2C045 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0C00A3325F3D1BE00A2C045 /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -474,6 +377,7 @@
 				7386646225B0D737005942D9 /* SettingsView.swift in Sources */,
 				73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */,
 				732F297F2583AB230072FFE2 /* Messages.swift in Sources */,
+				A0BA3F792619C35900123904 /* DashBoardView.swift in Sources */,
 				732F297725839F940072FFE2 /* SendingMessageView.swift in Sources */,
 				7344B7D7258A54F500F75C7A /* ArchiveMessageView.swift in Sources */,
 				73AC3733258AB1FF0008C19A /* MessageRow.swift in Sources */,
@@ -481,19 +385,20 @@
 				73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */,
 				73831392257F6FFB00591C6F /* PermissionView.swift in Sources */,
 				734A0B9125B5A0F4007BE57C /* ComposeGiftView.swift in Sources */,
+				A0BA3FA32619D1BC00123904 /* CardExampleView.swift in Sources */,
 				735E44B0257AF7A600D5317C /* ContentView.swift in Sources */,
 				736966192584FF1F007D6438 /* GifPlayerView.swift in Sources */,
 				7369662E2586A957007D6438 /* Persistence.swift in Sources */,
+				A0BA3F9F2619D1B500123904 /* StackExampleView.swift in Sources */,
 				734A0B9B25B5C99E007BE57C /* ShareSheet.swift in Sources */,
 				73B17BC1258379750018069E /* MessageContainer.swift in Sources */,
 				736966272586A5B9007D6438 /* YFTP.xcdatamodeld in Sources */,
 				7328AF8C25BF0D4000CC9AB2 /* ApplicationFeature.swift in Sources */,
+				A0BA3F9B2619D1A600123904 /* MessageCardData.swift in Sources */,
 				73487F0425B1E5A30029E773 /* MessageReceivedView.swift in Sources */,
 				73831397257F702700591C6F /* ComposeMessageView.swift in Sources */,
-				A0C00A3625F3D1BE00A2C045 /* YFTPWidget.intentdefinition in Sources */,
 				738D5E1D2584E77300F8A181 /* SentMessageView.swift in Sources */,
 				734A0B9625B5ACC8007BE57C /* ActivityViewController.swift in Sources */,
-				73487F3825B39CE80029E773 /* AppDelegate.swift in Sources */,
 				735E44AE257AF7A600D5317C /* YFTPApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -506,24 +411,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		735E44C2257AF7A700D5317C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				735E44CB257AF7A700D5317C /* YFTPUITests.swift in Sources */,
-				73CB5A8625A85CE400151AD7 /* SnapshotHelper.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A0C00A2425F3D1BD00A2C045 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A0C00A3025F3D1BD00A2C045 /* YFTPWidget.swift in Sources */,
-				A0C00A3525F3D1BE00A2C045 /* YFTPWidget.intentdefinition in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -531,16 +418,6 @@
 			isa = PBXTargetDependency;
 			target = 735E44A9257AF7A600D5317C /* YFTP */;
 			targetProxy = 735E44BC257AF7A700D5317C /* PBXContainerItemProxy */;
-		};
-		735E44C8257AF7A700D5317C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 735E44A9257AF7A600D5317C /* YFTP */;
-			targetProxy = 735E44C7257AF7A700D5317C /* PBXContainerItemProxy */;
-		};
-		A0C00A3825F3D1BE00A2C045 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A0C00A2725F3D1BD00A2C045 /* YFTPWidgetExtension */;
-			targetProxy = A0C00A3725F3D1BE00A2C045 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -664,7 +541,6 @@
 		735E44D0257AF7A700D5317C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -689,7 +565,6 @@
 		735E44D1257AF7A700D5317C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -755,90 +630,6 @@
 			};
 			name = Release;
 		};
-		735E44D6257AF7A700D5317C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P9KK68PA63;
-				INFOPLIST_FILE = YFTPUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = tjerk.YFTPUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = YFTP;
-			};
-			name = Debug;
-		};
-		735E44D7257AF7A700D5317C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P9KK68PA63;
-				INFOPLIST_FILE = YFTPUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = tjerk.YFTPUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = YFTP;
-			};
-			name = Release;
-		};
-		A0C00A3B25F3D1BE00A2C045 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P9KK68PA63;
-				INFOPLIST_FILE = YFTPWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tjerk.yftp.YFTPWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		A0C00A3C25F3D1BE00A2C045 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P9KK68PA63;
-				INFOPLIST_FILE = YFTPWidget/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.Tjerk.yftp.YFTPWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -869,25 +660,26 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		735E44D5257AF7A700D5317C /* Build configuration list for PBXNativeTarget "YFTPUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				735E44D6257AF7A700D5317C /* Debug */,
-				735E44D7257AF7A700D5317C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A0C00A3D25F3D1BE00A2C045 /* Build configuration list for PBXNativeTarget "YFTPWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A0C00A3B25F3D1BE00A2C045 /* Debug */,
-				A0C00A3C25F3D1BE00A2C045 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A0BA3F7C2619C73400123904 /* XCRemoteSwiftPackageReference "CardStack" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nhoogendoorn/CardStack";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A0BA3F7D2619C73400123904 /* CardStack */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0BA3F7C2619C73400123904 /* XCRemoteSwiftPackageReference "CardStack" */;
+			productName = CardStack;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		736966252586A5B9007D6438 /* YFTP.xcdatamodeld */ = {
