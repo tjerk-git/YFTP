@@ -8,8 +8,6 @@
 import SwiftUI
 import CoreData
 
-
-
 struct ArchiveMessageView: View {
         
     @Environment(\.managedObjectContext) var managedObjectContext

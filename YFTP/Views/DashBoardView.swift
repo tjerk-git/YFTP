@@ -9,7 +9,7 @@ import SwiftUI
 
 struct DashBoardView: View {
     var viewModel : MessageContainerViewModel
-    
+        
     var body: some View {
         HStack {
             

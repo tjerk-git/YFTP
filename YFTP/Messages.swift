@@ -8,6 +8,7 @@
 import Foundation
 import UserNotifications
 import CoreData
+import SwiftUI
 
 class Messages : ObservableObject {
     
@@ -29,6 +30,27 @@ class Messages : ObservableObject {
         }
     }
     
+    func constructMessageCardData() -> [MessageCardData]  {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Message")
+        var items: [MessageCardData] = []
+
+        do {
+             let persistenceController = PersistenceController.shared
+             let results   = try persistenceController.container.viewContext.fetch(fetchRequest)
+             let messages = results as! [Message]
+                
+             for message in messages {
+                items.append(MessageCardData(id: UUID().uuidString, dateAdded: message.dateAdded ?? Date(), body: message.body ?? "", sender: message.sender ?? "", color: Color.white, uuid: message.id ?? ""))
+             }
+
+        } catch let error as NSError {
+          print("Could not fetch \(error)")
+        }
+        
+        
+        return items
+    }
+    
     func getMessage(id : String) -> Message {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Message")
         fetchRequest.predicate = NSPredicate(format: "id = %@", id)
@@ -40,7 +62,6 @@ class Messages : ObservableObject {
             assert(messages.count < 2) // we shouldn't have any duplicates in CD
 
             if (messages.first as? Message) != nil {
-                // we've got the profile already cached!
                 message =  messages.first as! Message
             } else {
                 // no local cache yet, use placeholder for now

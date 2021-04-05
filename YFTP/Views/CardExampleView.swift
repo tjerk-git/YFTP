@@ -20,9 +20,7 @@ struct CardExampleView: CardView {
     
     var body: some View {
         HStack{
-         
-                Text(data?.body ?? "value").frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color("Color"))
-            
+            Text(data?.body ?? "value").frame(minWidth: 300, maxWidth: .infinity, minHeight: 400, maxHeight: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color.black)
         }
         .frame(minWidth: 300, maxWidth: .infinity, minHeight: 400, maxHeight: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .shadow(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 0)
@@ -39,7 +37,8 @@ struct CardExampleView_Previews: PreviewProvider {
             dateAdded: Date(),
             body: "",
             sender: "",
-            color: .red
+            color: .red,
+            uuid: ""
         ))
     }
 }

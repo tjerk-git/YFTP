@@ -8,18 +8,25 @@
 
 import SwiftUI
 import CardStack
+import CoreData
+import Messages
 
 struct StackExampleView: View {
-    let items: [MessageCardData] = [
-        MessageCardData(id: UUID().uuidString, dateAdded: Date(), body: "Go through emotions bad or good", sender: "from you:", color: Color.red),
-        MessageCardData(id: UUID().uuidString, dateAdded: Date(), body: "Go through asdas bad asdas good", sender: "from you:", color: Color.blue),
-        MessageCardData(id: UUID().uuidString, dateAdded: Date(), body: "Go through emotions bad or asdsa", sender: "from you:", color: Color.yellow),
-    ]
-    
+    let items = Messages().constructMessageCardData()
     let configuration = StackConfiguration()
+    @State var shuffle = false;
     
     var body: some View {
-        CardStackView<CardExampleView, MessageCardData>(configuration: nil, items: items)
+        if(shuffle){
+            CardStackView<CardExampleView, MessageCardData>(configuration: nil, items: items.shuffled())
+        } else {
+            CardStackView<CardExampleView, MessageCardData>(configuration: nil, items: items)
+        }
+       
+        Button("🚀 BLAST OFF") {
+            shuffle = true
+        }
+        
     }
 }
 
