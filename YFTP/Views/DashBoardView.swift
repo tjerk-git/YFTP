@@ -9,23 +9,13 @@ import SwiftUI
 
 struct DashBoardView: View {
     var viewModel : MessageContainerViewModel
-        
+    
     var body: some View {
         HStack {
             
             VStack(alignment: .center){
-                // greeting component
-                Text("Hey,")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("AccentColor"))
-                    .multilineTextAlignment(.leading)
-                // quote component
-                Text("It's monday (psyche, it's friday)")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-                    .foregroundColor(Color("Color"))
-                    .multilineTextAlignment(.leading)
+                
+                GreetingView()
                 //random stat component
                 Text("You probably did something yesterday")
                     .font(.footnote)

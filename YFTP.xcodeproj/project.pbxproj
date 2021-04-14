@@ -32,6 +32,7 @@
 		73B17BC1258379750018069E /* MessageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BC0258379750018069E /* MessageContainer.swift */; };
 		73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC13B425BC7E50006C9A5B /* OnboardingView.swift */; };
 		73E2DB3A25C44B4C00CA461C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */; };
+		A0165106262779590069F97E /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0165105262779590069F97E /* GreetingView.swift */; };
 		A0BA3F792619C35900123904 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3F782619C35900123904 /* DashBoardView.swift */; };
 		A0BA3F7E2619C73400123904 /* CardStack in Frameworks */ = {isa = PBXBuildFile; productRef = A0BA3F7D2619C73400123904 /* CardStack */; };
 		A0BA3F9B2619D1A600123904 /* MessageCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3F9A2619D1A600123904 /* MessageCardData.swift */; };
@@ -94,6 +95,7 @@
 		73B17BC0258379750018069E /* MessageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContainer.swift; sourceTree = "<group>"; };
 		73BC13B425BC7E50006C9A5B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		A0165105262779590069F97E /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
 		A0BA3F782619C35900123904 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		A0BA3F9A2619D1A600123904 /* MessageCardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCardData.swift; sourceTree = "<group>"; };
 		A0BA3F9E2619D1B500123904 /* StackExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackExampleView.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		735E44AC257AF7A600D5317C /* YFTP */ = {
 			isa = PBXGroup;
 			children = (
+				A0165104262779460069F97E /* Components */,
 				A0BA3F992619D18D00123904 /* Models */,
 				7328AF9025BF143C00CC9AB2 /* Views */,
 				735E44AD257AF7A600D5317C /* YFTPApp.swift */,
@@ -249,6 +252,14 @@
 				734A0B9A25B5C99E007BE57C /* ShareSheet.swift */,
 			);
 			path = Gift;
+			sourceTree = "<group>";
+		};
+		A0165104262779460069F97E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A0165105262779590069F97E /* GreetingView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		A0BA3F992619D18D00123904 /* Models */ = {
@@ -378,6 +389,7 @@
 				73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */,
 				732F297F2583AB230072FFE2 /* Messages.swift in Sources */,
 				A0BA3F792619C35900123904 /* DashBoardView.swift in Sources */,
+				A0165106262779590069F97E /* GreetingView.swift in Sources */,
 				732F297725839F940072FFE2 /* SendingMessageView.swift in Sources */,
 				7344B7D7258A54F500F75C7A /* ArchiveMessageView.swift in Sources */,
 				73AC3733258AB1FF0008C19A /* MessageRow.swift in Sources */,

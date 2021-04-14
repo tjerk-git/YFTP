@@ -23,9 +23,9 @@ struct CardExampleView: CardView {
             Text(data?.body ?? "value").frame(minWidth: 300, maxWidth: .infinity, minHeight: 400, maxHeight: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).foregroundColor(Color.black)
         }
         .frame(minWidth: 300, maxWidth: .infinity, minHeight: 400, maxHeight: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        .shadow(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 0)
         .cornerRadius(8)
         .background(data?.color)
+        .shadow(color: Color.black.opacity(0.1), radius: 3, x: 0, y: 0)
 
     }
 }
