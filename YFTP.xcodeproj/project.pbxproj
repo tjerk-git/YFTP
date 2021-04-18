@@ -31,13 +31,16 @@
 		73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BBB25836E4E0018069E /* PreferenceManager.swift */; };
 		73B17BC1258379750018069E /* MessageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BC0258379750018069E /* MessageContainer.swift */; };
 		73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC13B425BC7E50006C9A5B /* OnboardingView.swift */; };
-		73E2DB3A25C44B4C00CA461C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */; };
 		A0165106262779590069F97E /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0165105262779590069F97E /* GreetingView.swift */; };
+		A0981061262B6C9E006D4437 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0981060262B6C9E006D4437 /* Cards.swift */; };
+		A0B78A64262983DE00E66FA7 /* CardModalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B78A63262983DE00E66FA7 /* CardModalComponent.swift */; };
+		A0B78A6826298A2100E66FA7 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B78A6726298A2100E66FA7 /* Vibration.swift */; };
 		A0BA3F792619C35900123904 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3F782619C35900123904 /* DashBoardView.swift */; };
 		A0BA3F7E2619C73400123904 /* CardStack in Frameworks */ = {isa = PBXBuildFile; productRef = A0BA3F7D2619C73400123904 /* CardStack */; };
 		A0BA3F9B2619D1A600123904 /* MessageCardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3F9A2619D1A600123904 /* MessageCardData.swift */; };
-		A0BA3F9F2619D1B500123904 /* StackExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3F9E2619D1B500123904 /* StackExampleView.swift */; };
-		A0BA3FA32619D1BC00123904 /* CardExampleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3FA22619D1BC00123904 /* CardExampleView.swift */; };
+		A0BA3F9F2619D1B500123904 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3F9E2619D1B500123904 /* StackView.swift */; };
+		A0BA3FA32619D1BC00123904 /* CardMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3FA22619D1BC00123904 /* CardMessageView.swift */; };
+		A0D62331262999EE000224D7 /* CardShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D62330262999EE000224D7 /* CardShareSheet.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,14 +97,17 @@
 		73B17BBB25836E4E0018069E /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		73B17BC0258379750018069E /* MessageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContainer.swift; sourceTree = "<group>"; };
 		73BC13B425BC7E50006C9A5B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A0165105262779590069F97E /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
+		A0981060262B6C9E006D4437 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
+		A0B78A63262983DE00E66FA7 /* CardModalComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModalComponent.swift; sourceTree = "<group>"; };
+		A0B78A6726298A2100E66FA7 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		A0BA3F782619C35900123904 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		A0BA3F9A2619D1A600123904 /* MessageCardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCardData.swift; sourceTree = "<group>"; };
-		A0BA3F9E2619D1B500123904 /* StackExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackExampleView.swift; sourceTree = "<group>"; };
-		A0BA3FA22619D1BC00123904 /* CardExampleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardExampleView.swift; sourceTree = "<group>"; };
+		A0BA3F9E2619D1B500123904 /* StackView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StackView.swift; sourceTree = "<group>"; };
+		A0BA3FA22619D1BC00123904 /* CardMessageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardMessageView.swift; sourceTree = "<group>"; };
 		A0C00A2A25F3D1BD00A2C045 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A0C00A2C25F3D1BD00A2C045 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		A0D62330262999EE000224D7 /* CardShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShareSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,8 +132,7 @@
 		7328AF9025BF143C00CC9AB2 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A0BA3FA22619D1BC00123904 /* CardExampleView.swift */,
-				A0BA3F9E2619D1B500123904 /* StackExampleView.swift */,
+				A0BC3DAE262829AA00F26778 /* Cards */,
 				73E2DB4825C44D7500CA461C /* Gift */,
 				73E2DB4725C44D6800CA461C /* Setup */,
 				73E2DB4625C44D4800CA461C /* Compose */,
@@ -142,6 +147,7 @@
 		735E44A1257AF7A600D5317C = {
 			isa = PBXGroup;
 			children = (
+				A0981060262B6C9E006D4437 /* Cards.swift */,
 				736966252586A5B9007D6438 /* YFTP.xcdatamodeld */,
 				735E44AC257AF7A600D5317C /* YFTP */,
 				735E44BE257AF7A700D5317C /* YFTPTests */,
@@ -163,18 +169,17 @@
 		735E44AC257AF7A600D5317C /* YFTP */ = {
 			isa = PBXGroup;
 			children = (
+				7369662D2586A957007D6438 /* Persistence.swift */,
 				A0165104262779460069F97E /* Components */,
 				A0BA3F992619D18D00123904 /* Models */,
 				7328AF9025BF143C00CC9AB2 /* Views */,
 				735E44AD257AF7A600D5317C /* YFTPApp.swift */,
 				73B17BC0258379750018069E /* MessageContainer.swift */,
 				734A0B9525B5ACC8007BE57C /* ActivityViewController.swift */,
-				732F297E2583AB230072FFE2 /* Messages.swift */,
 				735E44B1257AF7A700D5317C /* Assets.xcassets */,
 				735E44B6257AF7A700D5317C /* Info.plist */,
 				735E44B3257AF7A700D5317C /* Preview Content */,
-				7369662D2586A957007D6438 /* Persistence.swift */,
-				73E2DB3925C44B4C00CA461C /* SceneDelegate.swift */,
+				A0B78A6726298A2100E66FA7 /* Vibration.swift */,
 			);
 			path = YFTP;
 			sourceTree = "<group>";
@@ -258,6 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				A0165105262779590069F97E /* GreetingView.swift */,
+				A0B78A63262983DE00E66FA7 /* CardModalComponent.swift */,
+				A0D62330262999EE000224D7 /* CardShareSheet.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -265,9 +272,19 @@
 		A0BA3F992619D18D00123904 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				732F297E2583AB230072FFE2 /* Messages.swift */,
 				A0BA3F9A2619D1A600123904 /* MessageCardData.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A0BC3DAE262829AA00F26778 /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				A0BA3FA22619D1BC00123904 /* CardMessageView.swift */,
+				A0BA3F9E2619D1B500123904 /* StackView.swift */,
+			);
+			path = Cards;
 			sourceTree = "<group>";
 		};
 		A0C00A2925F3D1BD00A2C045 /* Frameworks */ = {
@@ -386,6 +403,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7386646225B0D737005942D9 /* SettingsView.swift in Sources */,
+				A0D62331262999EE000224D7 /* CardShareSheet.swift in Sources */,
 				73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */,
 				732F297F2583AB230072FFE2 /* Messages.swift in Sources */,
 				A0BA3F792619C35900123904 /* DashBoardView.swift in Sources */,
@@ -393,15 +411,17 @@
 				732F297725839F940072FFE2 /* SendingMessageView.swift in Sources */,
 				7344B7D7258A54F500F75C7A /* ArchiveMessageView.swift in Sources */,
 				73AC3733258AB1FF0008C19A /* MessageRow.swift in Sources */,
-				73E2DB3A25C44B4C00CA461C /* SceneDelegate.swift in Sources */,
 				73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */,
+				A0B78A6826298A2100E66FA7 /* Vibration.swift in Sources */,
 				73831392257F6FFB00591C6F /* PermissionView.swift in Sources */,
+				A0981061262B6C9E006D4437 /* Cards.swift in Sources */,
 				734A0B9125B5A0F4007BE57C /* ComposeGiftView.swift in Sources */,
-				A0BA3FA32619D1BC00123904 /* CardExampleView.swift in Sources */,
+				A0BA3FA32619D1BC00123904 /* CardMessageView.swift in Sources */,
 				735E44B0257AF7A600D5317C /* ContentView.swift in Sources */,
 				736966192584FF1F007D6438 /* GifPlayerView.swift in Sources */,
 				7369662E2586A957007D6438 /* Persistence.swift in Sources */,
-				A0BA3F9F2619D1B500123904 /* StackExampleView.swift in Sources */,
+				A0BA3F9F2619D1B500123904 /* StackView.swift in Sources */,
+				A0B78A64262983DE00E66FA7 /* CardModalComponent.swift in Sources */,
 				734A0B9B25B5C99E007BE57C /* ShareSheet.swift in Sources */,
 				73B17BC1258379750018069E /* MessageContainer.swift in Sources */,
 				736966272586A5B9007D6438 /* YFTP.xcdatamodeld in Sources */,
@@ -566,7 +586,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tjerk.yftp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -590,7 +610,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.7;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tjerk.yftp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

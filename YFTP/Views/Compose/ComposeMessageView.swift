@@ -13,44 +13,61 @@ import AVFoundation
 
 
 struct ComposeMessageView: View {
-    @State var message: String = ""
+    @State var message: String = "Start typing here..."
     @State private var showingAlert = false
     var viewModel : MessageContainerViewModel
     var messages : Messages
     
     var body: some View {
-
         HStack() {
-
-        TextEditor(text: $message)
-            .background(Color.white)
-            .foregroundColor(Color.white)
-            .opacity(0.6)
-            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 100, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            .cornerRadius(15)
-
-            Button("🚀 BLAST OFF") {
-                AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
-                if !message.isEmpty {
-                    viewModel.messageContainerState = .sending
-                    addMessage(body: message)
-                } else {
-                    self.showingAlert = true
-                }
-            }.frame(maxWidth: .infinity, maxHeight: 75, alignment: .center)
-            .alert(isPresented: $showingAlert, content: {
-                Alert(title: Text("Please fill in a message"), message: Text("Message can't be empty!"), dismissButton: .default(Text("Sorry, jeez")))
-            })
-        }
-
-        .onTapGesture {
-            let keyWindow = UIApplication.shared.connectedScenes
-                               .filter({$0.activationState == .foregroundActive})
-                               .map({$0 as? UIWindowScene})
-                               .compactMap({$0})
-                               .first?.windows
-                               .filter({$0.isKeyWindow}).first
-            keyWindow!.endEditing(true)
+            VStack(alignment: .center) {
+                TextEditor(text: $message)
+                    .onTapGesture {
+                        if(message == "Start typing here..."){
+                            message = ""
+                        }
+                        
+                        let keyWindow = UIApplication.shared.connectedScenes
+                                           .filter({$0.activationState == .foregroundActive})
+                                           .map({$0 as? UIWindowScene})
+                                           .compactMap({$0})
+                                           .first?.windows
+                                           .filter({$0.isKeyWindow}).first
+                        keyWindow!.endEditing(true)
+                    }
+                    .background(Color("Color"))
+                    .foregroundColor(Color("Color"))
+                    .opacity(6)
+                    .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 0)
+                    .cornerRadius(15)
+                    .padding(10)
+                
+                    Button(action: {
+                        AudioServicesPlaySystemSound(kSystemSoundID_Vibrate)
+                        if !message.isEmpty {
+                            viewModel.messageContainerState = .sending
+                            addMessage(body: message)
+                        } else {
+                            self.showingAlert = true
+                        }
+                    }){
+                 
+                    Image(systemName: "hourglass").font(.largeTitle).foregroundColor(Color("Color"))
+                    Text("Send into the future")
+                        .fontWeight(.bold)
+                        .padding()
+                        .overlay(
+                            Capsule(style: .continuous).stroke(Color.blue, style: StrokeStyle(lineWidth: 3))
+                        )
+                        .foregroundColor(.blue).font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
+                    
+                }.alert(isPresented: $showingAlert, content: {
+                    Alert(title: Text("Please fill in a message"), message: Text("Message can't be empty!"), dismissButton: .default(Text("Sorry, jeez")))
+                })
+                
+                Spacer()
+            }
+            Spacer()
         }
     }
     
@@ -62,8 +79,50 @@ struct ComposeMessageView: View {
     }
 }
 
+
+
 struct ComposeMessageView_Previews: PreviewProvider {
     static var previews: some View {
         ComposeMessageView(viewModel : MessageContainerViewModel(), messages: Messages())
     }
 }
+
+//extension UITextField{
+//    @IBInspectable var doneAccessory: Bool{
+//        get{
+//            return self.doneAccessory
+//        }
+//        set (hasDone) {
+//            if hasDone{
+//                addDoneButtonOnKeyboard()
+//            }
+//        }
+//    }
+//
+//    func addDoneButtonOnKeyboard()
+//    {
+//        let doneToolbar: UIToolbar = UIToolbar(frame: CGRect.init(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50))
+//        doneToolbar.barStyle = .default
+//
+//        let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+//        let done: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(self.doneButtonAction))
+//
+//        let items = [flexSpace, done]
+//        doneToolbar.items = items
+//        doneToolbar.sizeToFit()
+//
+//        self.inputAccessoryView = doneToolbar
+//    }
+//
+//    @objc func doneButtonAction()
+//    {
+//        self.resignFirstResponder()
+//    }
+//}
+//
+//
+//extension UIApplication {
+//    func endEditing() {
+//        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+//    }
+//}

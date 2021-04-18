@@ -45,7 +45,7 @@ struct MessageReceivedView: View {
                             self.showingDetail = false
                         }.frame(maxWidth: .infinity, maxHeight: 75, alignment: .center)
                         .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
+                        .background(Color.gray)
                         .cornerRadius(10)
                         .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
                         .padding(30)

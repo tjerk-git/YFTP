@@ -30,118 +30,205 @@ struct MessageJSON : Codable {
     var sender : String
     var isGift : Int
 }
-
-
+    
 struct ComposeGiftView: View {
     
     var viewModel : MessageContainerViewModel
    
-    @State var message: String = ""
+    @State var message: String = "Start typing here..."
     @State private var showingAlert = false
     @State private var pickADate = false
     @State var selectedDate = Date()
     @State private var isSharePresented: Bool = false
     @State private var username: String = ""
     @State private var isEditing = false
-    
-    let largeConfig = UIImage.SymbolConfiguration(textStyle: .largeTitle)
+
     let defaults = UserDefaults.standard
     var messages : Messages
 
     var body: some View {
         
         HStack() {
-            VStack(alignment: .leading, spacing: 20) {
-                Image(systemName: "gift.fill").foregroundColor(.white)
-                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 50, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 10, maxHeight: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                Text("Gift a message to someone...")
-                    .fontWeight(.semibold)
-                    .multilineTextAlignment(.leading)
-                    .font(Font.system(size: 25.0))
-                    .foregroundColor(Color.blue)
-                    .padding(.horizontal, 20.0)
-                
-                ZStack(alignment: .leading) {
-                    ZStack {
-                        if message.isEmpty { Text("Tap here to start typing...").foregroundColor(.white).padding(10).background(Color.black) }
+            VStack(alignment: .center) {
+                TextEditor(text: $message)
+                    .onTapGesture {
+                        if(message == "Start typing here..."){
+                            message = ""
+                        }
                         
-                        TextEditor(text: $message)
-                            .background(Color.white)
-                            .foregroundColor(Color.white)
-                            .opacity(0.6)
-                            .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: 100, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: 100, maxHeight: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                            .cornerRadius(15)
+                        let keyWindow = UIApplication.shared.connectedScenes
+                                           .filter({$0.activationState == .foregroundActive})
+                                           .map({$0 as? UIWindowScene})
+                                           .compactMap({$0})
+                                           .first?.windows
+                                           .filter({$0.isKeyWindow}).first
+                        keyWindow!.endEditing(true)
                     }
-
-                  }
+                    .background(Color("Color"))
+                    .foregroundColor(Color("Color"))
+                    .opacity(6)
+                    .shadow(color: Color.black.opacity(0.2), radius: 7, x: 0, y: 0)
+                    .cornerRadius(15)
+                    .padding(10)
                 
                 VStack(alignment: .leading) {
+                       Text("Message will come from: ")
+                       TextField(
+                           defaults.string(forKey: "Name") ?? "Username",
+                                text: $username
+                           ) { isEditing in
+                               self.isEditing = isEditing
+                       }.padding(10)
+                           .autocapitalization(.none)
+                           .disableAutocorrection(true)
+
+                       Toggle(isOn: $pickADate) {
+                                       Text("Select a time")
+                                   }.padding()
+
+                       if(self.pickADate){
+                           DatePicker("When do you want to it to arrive?", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
+                       }
+                    Spacer()
+                }.padding(10)
+          
+                    Button(action: {
+                        if !message.isEmpty {
+                           username = defaults.string(forKey: "Name") ?? "Someone from the past"
+                           if(pickADate){
+                               self.GiftMessageWithDate(body: message, date: selectedDate, sender: username)
+                           } else {
+                               self.GiftMessage(body: message, sender: username)
+                           }
+
+                       } else {
+                           self.showingAlert = true
+                       }
+                    }){
+                 
+                    Image(systemName: "gift").font(.largeTitle).foregroundColor(Color("Color"))
+                    Text("Send to a friend")
+                        .fontWeight(.bold)
+                        .padding()
+                        .overlay(
+                            Capsule(style: .continuous).stroke(Color.blue, style: StrokeStyle(lineWidth: 3))
+                        )
+                        .foregroundColor(.blue).font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
                     
-                    Form {
-                        Text("Message will come from: ")
-                        TextField(
-                            defaults.string(forKey: "Name") ?? "Username",
-                                 text: $username
-                            ) { isEditing in
-                                self.isEditing = isEditing
-                        }.padding(10)
-                            .autocapitalization(.none)
-                            .disableAutocorrection(true)
-                        
-                        Toggle(isOn: $pickADate) {
-                                        Text("Select a time")
-                                    }.padding()
-                        
-                        if(self.pickADate){
-                            DatePicker("When do you want to it to arrive?", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
-                        }
-                    }.frame(maxHeight: 700)
-                       
-                    }
-      
-                VStack(alignment: .center, content: {
-                    ZStack {
-                        Button("🚀 BLAST OFF") {
-                            if !message.isEmpty {
-                                username = defaults.string(forKey: "Name") ?? "Someone from the past"
-                                if(pickADate){
-                                    self.GiftMessageWithDate(body: message, date: selectedDate, sender: username)
-                                } else {
-                                    self.GiftMessage(body: message, sender: username)
-                                }
-                                
-                            } else {
-                                self.showingAlert = true
-                            }
-                        }
-                        .frame(maxWidth: .infinity, maxHeight: 75, alignment: .center)
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
-                        .cornerRadius(10)
-                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
-                        .padding(30)
-                        .alert(isPresented: $showingAlert, content: {
-                            Alert(title: Text("Please fill in a message"), message: Text("Message can't be empty!"), dismissButton: .default(Text("Sorry, jeez")))
-                        })
-                    }
-    
-                }).frame(maxHeight: .infinity)
+                }.alert(isPresented: $showingAlert, content: {
+                    Alert(title: Text("Please fill in a message"), message: Text("Message can't be empty!"), dismissButton: .default(Text("Sorry, jeez")))
+                })
                 
                 Spacer()
-            }.padding(.top, 45)
-        }.background(Color.black)
-        .edgesIgnoringSafeArea(.all)
-        .onTapGesture {
-            let keyWindow = UIApplication.shared.connectedScenes
-                               .filter({$0.activationState == .foregroundActive})
-                               .map({$0 as? UIWindowScene})
-                               .compactMap({$0})
-                               .first?.windows
-                               .filter({$0.isKeyWindow}).first
-            keyWindow!.endEditing(true)
+            }
+            Spacer()
         }
-
     }
+        
+//
+//        HStack() {
+//            VStack(alignment: .leading, spacing: 20) {
+//                ZStack(alignment: .leading) {
+//                    ZStack {
+//                        if message.isEmpty { Text("Tap here to start typing...").foregroundColor(.white).padding(10).background(Color.black) }
+//
+//                        TextEditor(text: $message)
+//                            .background(Color.white)
+//                            .foregroundColor(Color.white)
+//                            .opacity(0.6)
+//                            .cornerRadius(15)
+//                    }
+//                  }
+//
+//                VStack(alignment: .leading) {
+//                    Form {
+//                        Text("Message will come from: ")
+//                        TextField(
+//                            defaults.string(forKey: "Name") ?? "Username",
+//                                 text: $username
+//                            ) { isEditing in
+//                                self.isEditing = isEditing
+//                        }.padding(10)
+//                            .autocapitalization(.none)
+//                            .disableAutocorrection(true)
+//
+//                        Toggle(isOn: $pickADate) {
+//                                        Text("Select a time")
+//                                    }.padding()
+//
+//                        if(self.pickADate){
+//                            DatePicker("When do you want to it to arrive?", selection: $selectedDate, displayedComponents: [.date, .hourAndMinute])
+//                        }
+//                    }
+//
+//                    }
+//
+//                VStack(alignment: .center, content: {
+//                    ZStack {
+//
+                        
+//                        Button(action: {
+//                            if !message.isEmpty {
+//                                username = defaults.string(forKey: "Name") ?? "Someone from the past"
+//                                if(pickADate){
+//                                    self.GiftMessageWithDate(body: message, date: selectedDate, sender: username)
+//                                } else {
+//                                    self.GiftMessage(body: message, sender: username)
+//                                }
+//
+//                            } else {
+//                                self.showingAlert = true
+//                            }
+//                        }){
+////
+//                        Image(systemName: "hourglass").font(.largeTitle).foregroundColor(Color("Color"))
+//                        Text("Send into the future")
+//                            .fontWeight(.bold)
+//                            .padding()
+//                            .overlay(
+//                                Capsule(style: .continuous).stroke(Color.blue, style: StrokeStyle(lineWidth: 3))
+//                            )
+//                            .foregroundColor(.blue).font(.subheadline)
+//                        Button("🚀 BLAST OFF") {
+//                            if !message.isEmpty {
+//                                username = defaults.string(forKey: "Name") ?? "Someone from the past"
+//                                if(pickADate){
+//                                    self.GiftMessageWithDate(body: message, date: selectedDate, sender: username)
+//                                } else {
+//                                    self.GiftMessage(body: message, sender: username)
+//                                }
+//
+//                            } else {
+//                                self.showingAlert = true
+//                            }
+//                        }
+//                        .frame(maxWidth: .infinity, maxHeight: 75, alignment: .center)
+//                        .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
+//                        .background(/*@START_MENU_TOKEN@*//*@PLACEHOLDER=View@*/Color.purple/*@END_MENU_TOKEN@*/)
+//                        .cornerRadius(10)
+//                        .shadow(radius: /*@START_MENU_TOKEN@*/10/*@END_MENU_TOKEN@*/)
+//                        .padding(30)
+//                        .alert(isPresented: $showingAlert, content: {
+//                            Alert(title: Text("Please fill in a message"), message: Text("Message can't be empty!"), dismissButton: .default(Text("Sorry, jeez")))
+//                        })
+//                    }
+//
+//                })
+//
+//                Spacer()
+//            }
+//        }
+
+    
+//    .onTapGesture {
+//        let keyWindow = UIApplication.shared.connectedScenes
+//                           .filter({$0.activationState == .foregroundActive})
+//                           .map({$0 as? UIWindowScene})
+//                           .compactMap({$0})
+//                           .first?.windows
+//                           .filter({$0.isKeyWindow}).first
+//        keyWindow!.endEditing(true)
+//    }
     
     func GiftMessageWithDate(body : String, date : Date?, sender : String) {
         

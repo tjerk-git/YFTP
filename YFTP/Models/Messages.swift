@@ -13,8 +13,7 @@ import SwiftUI
 class Messages : ObservableObject {
     
     @Published public var lastMessage = ""
-    
-    
+
     func addToCoreData(message: String, identifier: String, isGift: Int, sender: String) {
         let persistenceController = PersistenceController.shared
         // add to core data
@@ -33,6 +32,7 @@ class Messages : ObservableObject {
     func constructMessageCardData() -> [MessageCardData]  {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Message")
         var items: [MessageCardData] = []
+        var index = 1
 
         do {
              let persistenceController = PersistenceController.shared
@@ -40,7 +40,19 @@ class Messages : ObservableObject {
              let messages = results as! [Message]
                 
              for message in messages {
-                items.append(MessageCardData(id: UUID().uuidString, dateAdded: message.dateAdded ?? Date(), body: message.body ?? "", sender: message.sender ?? "", color: Color.white, uuid: message.id ?? ""))
+                items.append(
+                    MessageCardData(
+                        id: UUID().uuidString,
+                        dateAdded: message.dateAdded ?? Date(),
+                        body: message.body ?? "",
+                        sender: message.sender ?? "",
+                        color: Color.white,
+                        uuid: message.id ?? "",
+                        currentIndex: index,
+                        totalCards: messages.count,
+                        loved: message.loved
+                    ))
+                index += 1
              }
 
         } catch let error as NSError {
@@ -82,6 +94,21 @@ class Messages : ObservableObject {
         
         persistenceController.container.viewContext.performAndWait {
             message.hasBeenSeen = (1 != 0)
+           try? persistenceController.container.viewContext.save()
+        }
+        
+    }
+    
+    func toggleLoveState(id: String) {
+        let message = self.getMessage(id: id)
+        var loved = true
+        let persistenceController = PersistenceController.shared
+        
+        if(message.loved == true ){
+            loved = false
+        }
+        persistenceController.container.viewContext.performAndWait {
+            message.loved = loved
            try? persistenceController.container.viewContext.save()
         }
         

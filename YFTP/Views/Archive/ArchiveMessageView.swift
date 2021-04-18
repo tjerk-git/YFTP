@@ -29,7 +29,6 @@ struct ArchiveMessageView: View {
                 .frame(maxHeight:.infinity)
                 Spacer()
             }.padding(.top, 75)
-            .background(Color.black)
         }
         .edgesIgnoringSafeArea(.all)
     }

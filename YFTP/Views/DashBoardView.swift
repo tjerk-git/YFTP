@@ -12,25 +12,14 @@ struct DashBoardView: View {
     
     var body: some View {
         HStack {
-            
-            VStack(alignment: .center){
-                
-                GreetingView()
-                //random stat component
-                Text("You probably did something yesterday")
-                    .font(.footnote)
-                    .fontWeight(.regular)
-                    .foregroundColor(Color("Color"))
-                    .multilineTextAlignment(.leading)
-                    .padding(.top)
+            VStack(alignment: .center) {
+                GreetingView().padding(10)
                 
                 Spacer()
                 
                 // cards
-                StackExampleView()
+                StackView()
             }
-           
-
         //controls
         Spacer()
         }.frame(
@@ -39,6 +28,7 @@ struct DashBoardView: View {
         )
     }
 }
+
 
 struct DashBoardView_Previews: PreviewProvider {
     static var previews: some View {

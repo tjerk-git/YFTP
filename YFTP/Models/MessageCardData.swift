@@ -16,4 +16,7 @@ struct MessageCardData: CardData {
     var sender: String
     var color: Color
     var uuid: String
+    var currentIndex: Int
+    var totalCards: Int
+    var loved: Bool
 }
