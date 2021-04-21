@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreData
 import AudioToolbox
 
 struct MessageReceivedView: View {

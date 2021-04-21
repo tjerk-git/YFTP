@@ -8,7 +8,6 @@ import AVFoundation
 import SwiftUI
 import UIKit
 
-
 enum Coordinator {
   static func topViewController(_ viewController: UIViewController? = nil) -> UIViewController? {
     let vc = viewController ?? UIApplication.shared.windows.first(where: { $0.isKeyWindow })?.rootViewController

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct DashBoardView: View {
     var viewModel : MessageContainerViewModel
+    var messages : Messages
     
     var body: some View {
         HStack {
@@ -18,7 +19,9 @@ struct DashBoardView: View {
                 Spacer()
                 
                 // cards
-                StackView()
+                StackView(messages: self.messages, viewModel: viewModel)
+                
+                Spacer()
             }
         //controls
         Spacer()
@@ -30,8 +33,8 @@ struct DashBoardView: View {
 }
 
 
-struct DashBoardView_Previews: PreviewProvider {
-    static var previews: some View {
-        DashBoardView(viewModel : MessageContainerViewModel())
-    }
-}
+//struct DashBoardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DashBoardView(viewModel : MessageContainerViewModel(self.messages))
+//    }
+//}

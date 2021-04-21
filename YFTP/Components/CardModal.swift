@@ -6,41 +6,37 @@
 //
 
 import SwiftUI
-import CardStack
 
-struct CardModalComponent: View {
-    var data: MessageCardData?
+struct CardModal: View {
+   
+    //var data: MessageCardData?
+    @Binding var showModal: Bool
+    
     @State private var showShareSheet = false
     @State private var loved = false
     @State public var sharedItems : [Any] = []
     
-    init<Data>(data: Data) where Data: CardData {
-        if let infoData = data as? MessageCardData {
-            self.data = infoData
-        }
-        
-        if(self.data?.loved == true){
-            loved = true
-        }
-    }
+    var messages : Messages
+    var id : String
     
     var body: some View {
+        let message =  messages.getMessage(id: id)
         GeometryReader { geometry in
         VStack {
             HStack {
                 Spacer()
-                Text(data?.dateAdded ?? Date(), style: .date).font(.footnote).fontWeight(.light).foregroundColor(.black)
+                Text(message.dateAdded ?? Date(), style: .date).font(.footnote).fontWeight(.light).foregroundColor(.black)
             }
             .padding([.top, .trailing])
             HStack {
-                Text("- \(data?.sender ?? "You")")
+                 Text("- \(message.sender ?? "You")")
                 .font(.subheadline).fontWeight(.semibold).foregroundColor(.black)
                 Spacer()
             }
             .padding(.all)
             Spacer()
             HStack {
-                Text("\(data?.body ?? "")" ).font(.title2).fontWeight(.light).foregroundColor(.black).multilineTextAlignment(.center)
+                Text("\(message.body ?? "")" ).font(.title2).fontWeight(.light).foregroundColor(.black).multilineTextAlignment(.center)
             }.padding(10)
             Spacer()
             HStack {
@@ -55,12 +51,14 @@ struct CardModalComponent: View {
                 Spacer()
                 if(loved == true){
                     Image(systemName: "heart.fill").foregroundColor(.red).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).onTapGesture {
-                        LoveButton(id: data?.uuid ?? "")
+                        Vibration.success.vibrate()
+                        messages.toggleLoveState(id: id)
                         loved = false
                     }
                 } else {
                     Image(systemName: "heart").accentColor(Color("Color")).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).onTapGesture {
-                        LoveButton(id: data?.uuid ?? "")
+                        Vibration.success.vibrate()
+                        messages.toggleLoveState(id: id)
                         loved = true
                     }
                 }
@@ -68,18 +66,10 @@ struct CardModalComponent: View {
             }
             .padding(.all)
         }
-        .background(data?.color)
+        .background(Color.white)
     }
     }
 }
-
-func LoveButton(id: String) {
-    Vibration.success.vibrate()
-    if(id != ""){
-        Messages().toggleLoveState(id: id )
-    }
-}
-
 
 extension UIView {
     var renderedImage: UIImage {

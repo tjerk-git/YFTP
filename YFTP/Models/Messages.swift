@@ -13,7 +13,12 @@ import SwiftUI
 class Messages : ObservableObject {
     
     @Published public var lastMessage = ""
-
+    @Published public var items = [MessageCardData]()
+    
+    init(){
+        items = constructMessageCardData()
+    }
+    
     func addToCoreData(message: String, identifier: String, isGift: Int, sender: String) {
         let persistenceController = PersistenceController.shared
         // add to core data
@@ -27,6 +32,8 @@ class Messages : ObservableObject {
            newMessage.sender = sender
            try? persistenceController.container.viewContext.save()
         }
+        
+        items =  constructMessageCardData()
     }
     
     func constructMessageCardData() -> [MessageCardData]  {
@@ -58,7 +65,6 @@ class Messages : ObservableObject {
         } catch let error as NSError {
           print("Could not fetch \(error)")
         }
-        
         
         return items
     }
@@ -111,6 +117,8 @@ class Messages : ObservableObject {
             message.loved = loved
            try? persistenceController.container.viewContext.save()
         }
+        
+        items = constructMessageCardData()
         
     }
     

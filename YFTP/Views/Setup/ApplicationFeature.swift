@@ -9,8 +9,7 @@ import Foundation
 import SwiftUI
 
 struct ApplicationFeature : View {
-    
-    
+
     var featureTitle: String
     var featureDescription: String
     var featureImage: String

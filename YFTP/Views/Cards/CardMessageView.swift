@@ -11,12 +11,14 @@ import CardStack
 import AVFoundation
 
 struct CardMessageView: CardView {
+    @State private var showModal = false
     @State private var showingSheet = false
+    @EnvironmentObject var messages : Messages
     
     var data: MessageCardData?
     var currentIndex: Int?
     var totalCards: Int?
-    
+
     init<Data>(data: Data) where Data: CardData {
         if let infoData = data as? MessageCardData {
             self.data = infoData
@@ -53,11 +55,11 @@ struct CardMessageView: CardView {
             .padding(.all)
         }
         .contentShape(Rectangle())
-        .sheet(isPresented: $showingSheet) {
-            SheetView(data: data!)
+        .sheet(isPresented: $showModal) {
+            CardModal(showModal: $showModal, messages : messages, id: data?.uuid ?? "")
         }.onTapGesture {
             Vibration.success.vibrate()
-            showingSheet.toggle()
+            showModal.toggle()
         }
         .frame(minWidth: 300, maxWidth: .infinity, minHeight: 400, maxHeight: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .background(data?.color)
@@ -66,29 +68,29 @@ struct CardMessageView: CardView {
 }
 
 
-struct SheetView: View {
-    @Environment(\.presentationMode) var presentationMode
-    var data: MessageCardData
-    
-    var body: some View {
-        CardModalComponent(data: data)
-    }
-}
+//struct SheetView: View {
+//    @Environment(\.presentationMode) var presentationMode
+//    var data: MessageCardData
+//
+//    var body: some View {
+//        CardModalComponent(data: data)
+//    }
+//}
 
 
-struct CardExampleView_Previews: PreviewProvider {
-    static var previews: some View {
-        CardMessageView(
-            data: MessageCardData(
-            id: UUID().uuidString,
-            dateAdded: Date(),
-            body: "Go Through Emotions bad or good",
-            sender: "",
-            color: .white,
-            uuid: "",
-            currentIndex: 0,
-            totalCards: 42,
-            loved: false
-        ))
-    }
-}
+//struct CardExampleView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CardMessageView(
+//            data: MessageCardData(
+//            id: UUID().uuidString,
+//            dateAdded: Date(),
+//            body: "Go Through Emotions bad or good",
+//            sender: "",
+//            color: .white,
+//            uuid: "",
+//            currentIndex: 0,
+//            totalCards: 42,
+//            loved: false
+//        ))
+//    }
+//}

@@ -32,8 +32,7 @@
 		73B17BC1258379750018069E /* MessageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BC0258379750018069E /* MessageContainer.swift */; };
 		73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC13B425BC7E50006C9A5B /* OnboardingView.swift */; };
 		A0165106262779590069F97E /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0165105262779590069F97E /* GreetingView.swift */; };
-		A0981061262B6C9E006D4437 /* Cards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0981060262B6C9E006D4437 /* Cards.swift */; };
-		A0B78A64262983DE00E66FA7 /* CardModalComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B78A63262983DE00E66FA7 /* CardModalComponent.swift */; };
+		A0B78A64262983DE00E66FA7 /* CardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B78A63262983DE00E66FA7 /* CardModal.swift */; };
 		A0B78A6826298A2100E66FA7 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B78A6726298A2100E66FA7 /* Vibration.swift */; };
 		A0BA3F792619C35900123904 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3F782619C35900123904 /* DashBoardView.swift */; };
 		A0BA3F7E2619C73400123904 /* CardStack in Frameworks */ = {isa = PBXBuildFile; productRef = A0BA3F7D2619C73400123904 /* CardStack */; };
@@ -98,8 +97,7 @@
 		73B17BC0258379750018069E /* MessageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContainer.swift; sourceTree = "<group>"; };
 		73BC13B425BC7E50006C9A5B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A0165105262779590069F97E /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
-		A0981060262B6C9E006D4437 /* Cards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cards.swift; sourceTree = "<group>"; };
-		A0B78A63262983DE00E66FA7 /* CardModalComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModalComponent.swift; sourceTree = "<group>"; };
+		A0B78A63262983DE00E66FA7 /* CardModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModal.swift; sourceTree = "<group>"; };
 		A0B78A6726298A2100E66FA7 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		A0BA3F782619C35900123904 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		A0BA3F9A2619D1A600123904 /* MessageCardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCardData.swift; sourceTree = "<group>"; };
@@ -147,7 +145,6 @@
 		735E44A1257AF7A600D5317C = {
 			isa = PBXGroup;
 			children = (
-				A0981060262B6C9E006D4437 /* Cards.swift */,
 				736966252586A5B9007D6438 /* YFTP.xcdatamodeld */,
 				735E44AC257AF7A600D5317C /* YFTP */,
 				735E44BE257AF7A700D5317C /* YFTPTests */,
@@ -263,7 +260,7 @@
 			isa = PBXGroup;
 			children = (
 				A0165105262779590069F97E /* GreetingView.swift */,
-				A0B78A63262983DE00E66FA7 /* CardModalComponent.swift */,
+				A0B78A63262983DE00E66FA7 /* CardModal.swift */,
 				A0D62330262999EE000224D7 /* CardShareSheet.swift */,
 			);
 			path = Components;
@@ -414,14 +411,13 @@
 				73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */,
 				A0B78A6826298A2100E66FA7 /* Vibration.swift in Sources */,
 				73831392257F6FFB00591C6F /* PermissionView.swift in Sources */,
-				A0981061262B6C9E006D4437 /* Cards.swift in Sources */,
 				734A0B9125B5A0F4007BE57C /* ComposeGiftView.swift in Sources */,
 				A0BA3FA32619D1BC00123904 /* CardMessageView.swift in Sources */,
 				735E44B0257AF7A600D5317C /* ContentView.swift in Sources */,
 				736966192584FF1F007D6438 /* GifPlayerView.swift in Sources */,
 				7369662E2586A957007D6438 /* Persistence.swift in Sources */,
 				A0BA3F9F2619D1B500123904 /* StackView.swift in Sources */,
-				A0B78A64262983DE00E66FA7 /* CardModalComponent.swift in Sources */,
+				A0B78A64262983DE00E66FA7 /* CardModal.swift in Sources */,
 				734A0B9B25B5C99E007BE57C /* ShareSheet.swift in Sources */,
 				73B17BC1258379750018069E /* MessageContainer.swift in Sources */,
 				736966272586A5B9007D6438 /* YFTP.xcdatamodeld in Sources */,

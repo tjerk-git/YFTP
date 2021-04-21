@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import CoreData
 import AudioToolbox
 
 struct SentMessageView: View {
@@ -52,7 +51,7 @@ struct SentMessageView: View {
                 }
                 VStack(){
                     Button("Back to the present") {
-                        viewModel.messageContainerState = .none
+                        viewModel.messageContainerState = .home
                     }
                     .frame(width: 250, height: 50, alignment: .center)
                     .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
