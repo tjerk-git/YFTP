@@ -12,22 +12,22 @@ import AVFoundation
 
 struct StackView: View {
     @State private var showModal = false
-    @State var randomIndex = 0;
     @State var wrongAttempt: Bool = false
-       
+
     var messages : Messages
     var viewModel : MessageContainerViewModel
     
-
-    
     var body: some View {
-
+        
         let configuration : StackConfiguration = {
-            StackConfiguration (startIndex: randomIndex , numberOfCardsShown: 2)
+            StackConfiguration (startIndex: messages.currentMessageIndex , numberOfCardsShown: 2)
         }()
+
 
         if(messages.items.count > 0) {
             CardStackView<CardMessageView, MessageCardData>(configuration: configuration, items: messages.items).environmentObject(messages)
+            
+        
         } else {
             VStack {
                 HStack {
@@ -50,10 +50,20 @@ struct StackView: View {
             }
             .background(Color.white)
         }
+        
+        Button(action: {
+            showModal = true
+        }) {
+          Image(systemName: "plus.circle.fill").accentColor(Color("Color")).font(.largeTitle)
+        }
+        .sheet(isPresented: $showModal) {
+            ComposeMessageView(showModal: $showModal, viewModel: viewModel, messages : self.messages)
+        }
+        
            
         if(messages.items.count > 0){
             Button(action: {
-                randomIndex = Int.random(in: 0..<messages.items.count)
+                messages.updateToRandomIndex()
                 Vibration.success.vibrate()
             }) {
               Image(systemName: "repeat").accentColor(Color("Color")).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).overlay(
@@ -65,28 +75,16 @@ struct StackView: View {
         }
         
 
-        
-        Button(action: {
-            showModal = true
-        }) {
-          Image(systemName: "plus.circle.fill").accentColor(Color("Color")).font(.largeTitle)
-        }.frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        .sheet(isPresented: $showModal, onDismiss: ({
-            randomIndex = messages.items.count - 1
-        })
-        ) {
-            ComposeMessageView(showModal: $showModal, viewModel: viewModel, messages : self.messages)
-        }
-    
+
     }
 }
 
 
-//
-//struct StackExampleView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        StackView()
-//    }
-//}
-//
-//
+
+struct StackExampleView_Previews: PreviewProvider {
+    static var previews: some View {
+        StackView(messages: Messages(), viewModel: MessageContainerViewModel())
+    }
+}
+
+

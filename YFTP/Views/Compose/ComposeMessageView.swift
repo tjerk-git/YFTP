@@ -40,6 +40,7 @@ struct ComposeMessageView: View {
                                                .filter({$0.isKeyWindow}).first
                             keyWindow!.endEditing(true)
                         }
+                        .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
                         .background(Color("Color"))
                         .foregroundColor(Color("Color"))
                         .opacity(6)
@@ -89,7 +90,7 @@ struct ComposeMessageView: View {
     
     func addMessage(body : String) {
         let defaults = UserDefaults.standard
-        let sender = defaults.string(forKey: "Name") ?? "You from the past"
+        let sender = defaults.string(forKey: "Name") ?? "You"
         
         messages.sendMessage(message: body, sender: sender, isGift: 0)
     }

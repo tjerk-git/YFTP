@@ -30,7 +30,7 @@ struct MessageContainer: View {
             DashBoardView(viewModel: viewModel, messages : messages)
              .tabItem {
                  Image(systemName: "note.text")
-                 Text("From you:")
+                 Text("From you")
              }.tag(1)
             
 //            ComposeMessageView(viewModel: viewModel, messages : messages)
@@ -47,8 +47,8 @@ struct MessageContainer: View {
             
             ComposeGiftView(viewModel: viewModel, messages: messages)
                 .tabItem {
-                    Image(systemName: "gift.fill")
-                    Text("Gift")
+                    Image(systemName: "gear")
+                    Text("Settings")
                 }.tag(3)
   
 

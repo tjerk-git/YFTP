@@ -14,8 +14,10 @@ class Messages : ObservableObject {
     
     @Published public var lastMessage = ""
     @Published public var items = [MessageCardData]()
+    @Published public var currentMessageIndex : Int
     
     init(){
+        currentMessageIndex = 0
         items = constructMessageCardData()
     }
     
@@ -33,7 +35,12 @@ class Messages : ObservableObject {
            try? persistenceController.container.viewContext.save()
         }
         
-        items =  constructMessageCardData()
+        currentMessageIndex = items.count 
+        items = constructMessageCardData()
+    }
+    
+    func updateToRandomIndex(){
+        currentMessageIndex = Int.random(in: 0..<items.count)
     }
     
     func constructMessageCardData() -> [MessageCardData]  {
@@ -105,8 +112,8 @@ class Messages : ObservableObject {
         
     }
     
-    func toggleLoveState(id: String) {
-        let message = self.getMessage(id: id)
+    func toggleLoveState(id: String, currentIndex: Int) {
+        let message = getMessage(id: id)
         var loved = true
         let persistenceController = PersistenceController.shared
         
@@ -118,6 +125,7 @@ class Messages : ObservableObject {
            try? persistenceController.container.viewContext.save()
         }
         
+        currentMessageIndex = currentIndex - 1
         items = constructMessageCardData()
         
     }

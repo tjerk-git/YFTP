@@ -33,14 +33,17 @@ struct CardMessageView: CardView {
             }
             .padding([.top, .trailing])
             HStack {
-                Text("-\(data?.sender ?? "You")")
-                .font(.subheadline).fontWeight(.semibold).foregroundColor(.black)
                 Spacer()
             }
             .padding(.all)
             Spacer()
             HStack {
-                Text("\(data?.body ?? "")" ).font(.title2).fontWeight(.light).foregroundColor(.black).multilineTextAlignment(.center)
+                Text("\"\(data?.body ?? "\"")\"" ).font(.title2).fontWeight(.light).foregroundColor(.black).multilineTextAlignment(.center).padding()
+          
+            }
+            HStack {
+                Text("-\(data?.sender ?? "You")")
+                .font(.subheadline).fontWeight(.semibold).foregroundColor(.black)
             }
             Spacer()
             HStack {
@@ -55,11 +58,9 @@ struct CardMessageView: CardView {
             .padding(.all)
         }
         .contentShape(Rectangle())
-        .sheet(isPresented: $showModal) {
-            CardModal(showModal: $showModal, messages : messages, id: data?.uuid ?? "")
-        }.onTapGesture {
+        .onTapGesture(count: 2) {
             Vibration.success.vibrate()
-            showModal.toggle()
+            messages.toggleLoveState(id: data?.uuid ?? "", currentIndex: data?.currentIndex ?? 0)
         }
         .frame(minWidth: 300, maxWidth: .infinity, minHeight: 400, maxHeight: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .background(data?.color)
@@ -67,30 +68,19 @@ struct CardMessageView: CardView {
     }
 }
 
-
-//struct SheetView: View {
-//    @Environment(\.presentationMode) var presentationMode
-//    var data: MessageCardData
-//
-//    var body: some View {
-//        CardModalComponent(data: data)
-//    }
-//}
-
-
-//struct CardExampleView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CardMessageView(
-//            data: MessageCardData(
-//            id: UUID().uuidString,
-//            dateAdded: Date(),
-//            body: "Go Through Emotions bad or good",
-//            sender: "",
-//            color: .white,
-//            uuid: "",
-//            currentIndex: 0,
-//            totalCards: 42,
-//            loved: false
-//        ))
-//    }
-//}
+struct CardExampleView_Previews: PreviewProvider {
+    static var previews: some View {
+        CardMessageView(
+            data: MessageCardData(
+            id: UUID().uuidString,
+            dateAdded: Date(),
+            body: "Go Through Emotions bad or good",
+            sender: "",
+            color: .white,
+            uuid: "",
+            currentIndex: 0,
+            totalCards: 42,
+            loved: false
+        ))
+    }
+}

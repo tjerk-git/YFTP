@@ -49,16 +49,16 @@ struct CardModal: View {
                     CardShareSheet(activityItems: self.sharedItems)
                 }
                 Spacer()
-                if(loved == true){
+                if(message.loved == true){
                     Image(systemName: "heart.fill").foregroundColor(.red).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).onTapGesture {
                         Vibration.success.vibrate()
-                        messages.toggleLoveState(id: id)
+                        // messages.toggleLoveState(message: message)
                         loved = false
                     }
                 } else {
                     Image(systemName: "heart").accentColor(Color("Color")).font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).onTapGesture {
                         Vibration.success.vibrate()
-                        messages.toggleLoveState(id: id)
+                      //  messages.toggleLoveState(message: message)
                         loved = true
                     }
                 }

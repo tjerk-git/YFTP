@@ -31,6 +31,9 @@
 		73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BBB25836E4E0018069E /* PreferenceManager.swift */; };
 		73B17BC1258379750018069E /* MessageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BC0258379750018069E /* MessageContainer.swift */; };
 		73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC13B425BC7E50006C9A5B /* OnboardingView.swift */; };
+		A00AF40A2641553100B8E98C /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF4092641553100B8E98C /* Collection.swift */; };
+		A00AF40E264156D400B8E98C /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF40D264156D400B8E98C /* CollectionView.swift */; };
+		A00AF4102641592500B8E98C /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF40F2641592500B8E98C /* CategoryView.swift */; };
 		A0165106262779590069F97E /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0165105262779590069F97E /* GreetingView.swift */; };
 		A0B78A64262983DE00E66FA7 /* CardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B78A63262983DE00E66FA7 /* CardModal.swift */; };
 		A0B78A6826298A2100E66FA7 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B78A6726298A2100E66FA7 /* Vibration.swift */; };
@@ -96,6 +99,9 @@
 		73B17BBB25836E4E0018069E /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		73B17BC0258379750018069E /* MessageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContainer.swift; sourceTree = "<group>"; };
 		73BC13B425BC7E50006C9A5B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		A00AF4092641553100B8E98C /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		A00AF40D264156D400B8E98C /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
+		A00AF40F2641592500B8E98C /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		A0165105262779590069F97E /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
 		A0B78A63262983DE00E66FA7 /* CardModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModal.swift; sourceTree = "<group>"; };
 		A0B78A6726298A2100E66FA7 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 		735E44A1257AF7A600D5317C = {
 			isa = PBXGroup;
 			children = (
+				A00AF40F2641592500B8E98C /* CategoryView.swift */,
 				736966252586A5B9007D6438 /* YFTP.xcdatamodeld */,
 				735E44AC257AF7A600D5317C /* YFTP */,
 				735E44BE257AF7A700D5317C /* YFTPTests */,
@@ -210,6 +217,7 @@
 		73E2DB4425C44D1900CA461C /* Archive */ = {
 			isa = PBXGroup;
 			children = (
+				A00AF40D264156D400B8E98C /* CollectionView.swift */,
 				7344B7D6258A54F500F75C7A /* ArchiveMessageView.swift */,
 				73AC3732258AB1FF0008C19A /* MessageRow.swift */,
 			);
@@ -271,6 +279,7 @@
 			children = (
 				732F297E2583AB230072FFE2 /* Messages.swift */,
 				A0BA3F9A2619D1A600123904 /* MessageCardData.swift */,
+				A00AF4092641553100B8E98C /* Collection.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,9 +410,11 @@
 			files = (
 				7386646225B0D737005942D9 /* SettingsView.swift in Sources */,
 				A0D62331262999EE000224D7 /* CardShareSheet.swift in Sources */,
+				A00AF40E264156D400B8E98C /* CollectionView.swift in Sources */,
 				73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */,
 				732F297F2583AB230072FFE2 /* Messages.swift in Sources */,
 				A0BA3F792619C35900123904 /* DashBoardView.swift in Sources */,
+				A00AF4102641592500B8E98C /* CategoryView.swift in Sources */,
 				A0165106262779590069F97E /* GreetingView.swift in Sources */,
 				732F297725839F940072FFE2 /* SendingMessageView.swift in Sources */,
 				7344B7D7258A54F500F75C7A /* ArchiveMessageView.swift in Sources */,
@@ -420,6 +431,7 @@
 				A0B78A64262983DE00E66FA7 /* CardModal.swift in Sources */,
 				734A0B9B25B5C99E007BE57C /* ShareSheet.swift in Sources */,
 				73B17BC1258379750018069E /* MessageContainer.swift in Sources */,
+				A00AF40A2641553100B8E98C /* Collection.swift in Sources */,
 				736966272586A5B9007D6438 /* YFTP.xcdatamodeld in Sources */,
 				7328AF8C25BF0D4000CC9AB2 /* ApplicationFeature.swift in Sources */,
 				A0BA3F9B2619D1A600123904 /* MessageCardData.swift in Sources */,
@@ -582,7 +594,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tjerk.yftp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -606,7 +618,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.3.1;
+				MARKETING_VERSION = 1.3.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Tjerk.yftp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
