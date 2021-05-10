@@ -13,8 +13,8 @@ import AVFoundation
 struct StackView: View {
     @State private var showModal = false
     @State var wrongAttempt: Bool = false
-
-    var messages : Messages
+    @ObservedObject var messages = Messages.standard
+    
     var viewModel : MessageContainerViewModel
     
     var body: some View {
@@ -57,7 +57,7 @@ struct StackView: View {
           Image(systemName: "plus.circle.fill").accentColor(Color("Color")).font(.largeTitle)
         }
         .sheet(isPresented: $showModal) {
-            ComposeMessageView(showModal: $showModal, viewModel: viewModel, messages : self.messages)
+            ComposeMessageView(showModal: $showModal, viewModel: viewModel)
         }
         
            

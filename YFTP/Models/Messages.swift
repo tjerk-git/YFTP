@@ -12,6 +12,8 @@ import SwiftUI
 
 class Messages : ObservableObject {
     
+    static let standard = Messages()
+    
     @Published public var lastMessage = ""
     @Published public var items = [MessageCardData]()
     @Published public var currentMessageIndex : Int
@@ -32,10 +34,11 @@ class Messages : ObservableObject {
            newMessage.id = identifier
            newMessage.isGift = (isGift != 0)
            newMessage.sender = sender
+           
+          
+
            try? persistenceController.container.viewContext.save()
         }
-        
-        currentMessageIndex = items.count 
         items = constructMessageCardData()
     }
     
@@ -72,6 +75,8 @@ class Messages : ObservableObject {
         } catch let error as NSError {
           print("Could not fetch \(error)")
         }
+        
+        currentMessageIndex = items.count - 1
         
         return items
     }
@@ -126,15 +131,15 @@ class Messages : ObservableObject {
         }
         
         currentMessageIndex = currentIndex - 1
-        items = constructMessageCardData()
         
+        objectWillChange.send()
     }
     
     func sendMessage(message: String, sender: String, isGift: Int) {
         var identifier = ""
         identifier = self.setNotificationWithRandomDate(message: message, sender: sender)
         self.addToCoreData(message: message, identifier: identifier, isGift: isGift, sender: sender)
-        
+
         lastMessage = message
     }
 
@@ -201,7 +206,18 @@ class Messages : ObservableObject {
         return request.identifier
     }
     
-    
+    func addMessagesToCollection(selection: Set<String>) {
+        
+        
+//        var messages = []
+//        for message in messages {
+//            let persistenceController = PersistenceController.shared
+//            persistenceController.container.viewContext.performAndWait {
+//                message.collection = collection
+//               try? persistenceController.container.viewContext.save()
+//            }
+//        }
+    }
     
     
 //    func getUpcomingNotification() {

@@ -14,8 +14,9 @@ struct ComposeMessageView: View {
     @State private var showingAlert = false
     @State private var showGif = false
     
+    var messages = Messages.standard
+    
     var viewModel : MessageContainerViewModel
-    var messages : Messages
     
     var body: some View {
         HStack() {

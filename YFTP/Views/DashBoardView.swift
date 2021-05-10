@@ -9,7 +9,6 @@ import SwiftUI
 
 struct DashBoardView: View {
     var viewModel : MessageContainerViewModel
-    var messages : Messages
     
     var body: some View {
         HStack {
@@ -19,7 +18,7 @@ struct DashBoardView: View {
                 Spacer()
                 
                 // cards
-                StackView(messages: self.messages, viewModel: viewModel)
+                StackView(viewModel: viewModel)
                 
                 Spacer()
             }

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import AudioToolbox
 
 struct MessageReceivedView: View {
     @Binding var showingDetail : Bool
@@ -39,13 +38,20 @@ struct MessageReceivedView: View {
                             .padding(15)
                             .foregroundColor(Color.black)
                         Spacer()
-                        Button("Accept & save 🚀"){
+
+                        Button(action: {
                             self.showingDetail = false
-                        }.frame(maxWidth: .infinity, maxHeight: 75, alignment: .center)
-                        .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                        .padding(30)
+                            Vibration.success.vibrate()
+                        }){
+                     
+                        Text("Accept & Save")
+                            .fontWeight(.bold)
+                            .padding()
+                            .overlay(
+                                Capsule(style: .continuous).stroke(Color.blue, style: StrokeStyle(lineWidth: 3))
+                            )
+                            .foregroundColor(.blue).font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
+                        }
                     }
                     Spacer()
                 }

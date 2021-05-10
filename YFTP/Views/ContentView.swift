@@ -9,16 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var preferences : PreferenceManager = PreferenceManager()
-    @EnvironmentObject var messages : Messages
-    
     var body: some View {
         switch preferences.notificationSetting {
             case .notset:
                 PermissionView(preferences: preferences)
             case .accepted:
-                MessageContainer(messages: messages)
+                MessageContainer()
             case .denied:
-                MessageContainer(messages: messages)
+                MessageContainer()
             case .loading:
                 Text ("Loading")
         }

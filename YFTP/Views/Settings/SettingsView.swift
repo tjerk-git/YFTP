@@ -2,36 +2,27 @@
 //  SettingsView.swift
 //  YFTP
 //
-//  Created by Tjerk Dijkstra on 14/01/2021.
+//  Created by Tjerk Dijkstra on 04/05/2021.
 //
 
 import SwiftUI
 
 struct SettingsView: View {
-    var viewModel : MessageContainerViewModel
+    @Environment(\.openURL) var openURL
+  
     @State private var username: String = ""
-    @State private var isEditing = false
     @State private var buttonText: String = "Save"
+    
     let defaults = UserDefaults.standard
     var body: some View {
-    
-        HStack() {
-            VStack(alignment: .leading, spacing: 20){
-                Form {
-                    Text("Messages will come from: ")
-                    TextField(
-                        defaults.string(forKey: "Name") ?? "Username",
-                             text: $username
-                        ) { isEditing in
-                            self.isEditing = isEditing
-                            self.buttonText = "Save"
-                    }.padding(10)
-                        .autocapitalization(.none)
-                        .disableAutocorrection(true)
+        NavigationView {
+            Form {
+                Section(header: Text("Name used in notifications and gifts")) {
+                    TextField(defaults.string(forKey: "Name") ?? "Name", text: $username)
                     
                     Button(buttonText) {
                         defaults.set(username, forKey: "Name")
-                        buttonText = "Saved ✅"
+                        Vibration.success.vibrate()
                     }
                     .frame(width: 250, height: 50, alignment: .center)
                     .foregroundColor(/*@START_MENU_TOKEN@*/.white/*@END_MENU_TOKEN@*/)
@@ -39,26 +30,42 @@ struct SettingsView: View {
                     .cornerRadius(10)
                     .frame(maxWidth: .infinity)
                     .padding(20)
-                }.frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealWidth: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, minHeight: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, idealHeight: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, maxHeight: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                
-            }       .onTapGesture {
-                let keyWindow = UIApplication.shared.connectedScenes
-                                   .filter({$0.activationState == .foregroundActive})
-                                   .map({$0 as? UIWindowScene})
-                                   .compactMap({$0})
-                                   .first?.windows
-                                   .filter({$0.isKeyWindow}).first
-                keyWindow!.endEditing(true)
-        }.background(Color.black)
-        .edgesIgnoringSafeArea(.all)
+                }
 
+                Section(header: Text("About")) {
+                    HStack {
+                            Text("Made by")
+                            Spacer()
+                            Text("Tjerk Dijkstra")
+                        }
+                    HStack {
+                            Text("Version")
+                            Spacer()
+                            Text("1.3.2")
+                        }
+                }
+                
+                Section {
+                    Button(action: {
+                        openURL(URL(string: "https://www.buymeacoffee.com/tjerkdijkstra")!)
+                    }) {
+                        Text("Donate ❤️")
+                    }
+                    
+                    Button(action: {
+                        openURL(URL(string: "mailto://tjerk@hey.com")!)
+                    }) {
+                        Text("Feature request")
+                    }
+                }
+
+                }
+                .navigationBarTitle(Text("Settings"))
         }
     }
 }
-
-    
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(viewModel : MessageContainerViewModel())
+        SettingsView()
     }
 }

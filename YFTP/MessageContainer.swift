@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum MessageContainerState {
-    case sent, none, home
+    case none, home
 }
 
 class MessageContainerViewModel: ObservableObject{
@@ -21,13 +21,11 @@ struct MessageContainer: View {
     @ObservedObject var viewModel = MessageContainerViewModel()
     @State var showingDetail : Bool = false
     
-    var messages : Messages
-        
     var body: some View {
                 
         let tabview =  TabView(selection: $currentView) {
             
-            DashBoardView(viewModel: viewModel, messages : messages)
+            DashBoardView(viewModel: viewModel)
              .tabItem {
                  Image(systemName: "note.text")
                  Text("From you")
@@ -39,28 +37,24 @@ struct MessageContainer: View {
 //                 Text("Compose")
 //             }.tag(2)
             
-            ArchiveMessageView(viewModel: viewModel, messages : messages)
+            CollectionView()
              .tabItem {
-                 Image(systemName: "memories")
-                 Text("Archive")
+                 Image(systemName: "mail.stack.fill")
+                 Text("Collections")
              }.tag(2)
             
-            ComposeGiftView(viewModel: viewModel, messages: messages)
+            SettingsView()
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
                 }.tag(3)
-  
 
          }
 
         switch (viewModel.messageContainerState) {
-            // case .sending: SendingMessageView(viewModel: viewModel)
-            case .sent: SentMessageView(viewModel: viewModel, messages : messages)
             case .none: tabview
-            case .home: DashBoardView(viewModel: viewModel, messages: messages)
+            case .home: DashBoardView(viewModel: viewModel)
         }
-        
     }
     
 }

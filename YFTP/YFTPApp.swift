@@ -16,7 +16,8 @@ struct messageJSON : Codable {
 @main
 struct YFTPApp: App {
 
-    @StateObject var messages = Messages()
+    var messages = Messages.standard
+    
     @State var showingDetail : Bool = false
     @State var receivedMessage = ""
     @State var sender = ""
@@ -28,7 +29,6 @@ struct YFTPApp: App {
         WindowGroup {
             ContentView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                .environmentObject(messages)
                 .onOpenURL { url in
                     self.importJSON(url: url)
                 }.sheet(isPresented: $showingDetail) {

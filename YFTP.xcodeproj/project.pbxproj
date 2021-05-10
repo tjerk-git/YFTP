@@ -25,15 +25,14 @@
 		7369662E2586A957007D6438 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7369662D2586A957007D6438 /* Persistence.swift */; };
 		73831392257F6FFB00591C6F /* PermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73831391257F6FFB00591C6F /* PermissionView.swift */; };
 		73831397257F702700591C6F /* ComposeMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73831396257F702700591C6F /* ComposeMessageView.swift */; };
-		7386646225B0D737005942D9 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386646125B0D737005942D9 /* SettingsView.swift */; };
-		738D5E1D2584E77300F8A181 /* SentMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738D5E1C2584E77300F8A181 /* SentMessageView.swift */; };
 		73AC3733258AB1FF0008C19A /* MessageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AC3732258AB1FF0008C19A /* MessageRow.swift */; };
 		73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BBB25836E4E0018069E /* PreferenceManager.swift */; };
 		73B17BC1258379750018069E /* MessageContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73B17BC0258379750018069E /* MessageContainer.swift */; };
 		73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC13B425BC7E50006C9A5B /* OnboardingView.swift */; };
-		A00AF40A2641553100B8E98C /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF4092641553100B8E98C /* Collection.swift */; };
+		A00AF40A2641553100B8E98C /* CollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF4092641553100B8E98C /* CollectionManager.swift */; };
 		A00AF40E264156D400B8E98C /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF40D264156D400B8E98C /* CollectionView.swift */; };
 		A00AF4102641592500B8E98C /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF40F2641592500B8E98C /* CategoryView.swift */; };
+		A00AF4122641CD6500B8E98C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF4112641CD6500B8E98C /* SettingsView.swift */; };
 		A0165106262779590069F97E /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0165105262779590069F97E /* GreetingView.swift */; };
 		A0B78A64262983DE00E66FA7 /* CardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B78A63262983DE00E66FA7 /* CardModal.swift */; };
 		A0B78A6826298A2100E66FA7 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B78A6726298A2100E66FA7 /* Vibration.swift */; };
@@ -43,6 +42,7 @@
 		A0BA3F9F2619D1B500123904 /* StackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3F9E2619D1B500123904 /* StackView.swift */; };
 		A0BA3FA32619D1BC00123904 /* CardMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3FA22619D1BC00123904 /* CardMessageView.swift */; };
 		A0D62331262999EE000224D7 /* CardShareSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D62330262999EE000224D7 /* CardShareSheet.swift */; };
+		A0FD2A9626429D390077DE2D /* ComposeCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FD2A9526429D390077DE2D /* ComposeCategory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,15 +93,14 @@
 		7369662D2586A957007D6438 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		73831391257F6FFB00591C6F /* PermissionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionView.swift; sourceTree = "<group>"; };
 		73831396257F702700591C6F /* ComposeMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeMessageView.swift; sourceTree = "<group>"; };
-		7386646125B0D737005942D9 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		738D5E1C2584E77300F8A181 /* SentMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentMessageView.swift; sourceTree = "<group>"; };
 		73AC3732258AB1FF0008C19A /* MessageRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageRow.swift; sourceTree = "<group>"; };
 		73B17BBB25836E4E0018069E /* PreferenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceManager.swift; sourceTree = "<group>"; };
 		73B17BC0258379750018069E /* MessageContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContainer.swift; sourceTree = "<group>"; };
 		73BC13B425BC7E50006C9A5B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		A00AF4092641553100B8E98C /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		A00AF4092641553100B8E98C /* CollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionManager.swift; sourceTree = "<group>"; };
 		A00AF40D264156D400B8E98C /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		A00AF40F2641592500B8E98C /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		A00AF4112641CD6500B8E98C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A0165105262779590069F97E /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
 		A0B78A63262983DE00E66FA7 /* CardModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModal.swift; sourceTree = "<group>"; };
 		A0B78A6726298A2100E66FA7 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
@@ -112,6 +111,7 @@
 		A0C00A2A25F3D1BD00A2C045 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		A0C00A2C25F3D1BD00A2C045 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		A0D62330262999EE000224D7 /* CardShareSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardShareSheet.swift; sourceTree = "<group>"; };
+		A0FD2A9526429D390077DE2D /* ComposeCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeCategory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +151,8 @@
 		735E44A1257AF7A600D5317C = {
 			isa = PBXGroup;
 			children = (
+				A00AF40D264156D400B8E98C /* CollectionView.swift */,
+				A0FD2A9526429D390077DE2D /* ComposeCategory.swift */,
 				A00AF40F2641592500B8E98C /* CategoryView.swift */,
 				736966252586A5B9007D6438 /* YFTP.xcdatamodeld */,
 				735E44AC257AF7A600D5317C /* YFTP */,
@@ -173,7 +175,6 @@
 		735E44AC257AF7A600D5317C /* YFTP */ = {
 			isa = PBXGroup;
 			children = (
-				7369662D2586A957007D6438 /* Persistence.swift */,
 				A0165104262779460069F97E /* Components */,
 				A0BA3F992619D18D00123904 /* Models */,
 				7328AF9025BF143C00CC9AB2 /* Views */,
@@ -217,7 +218,6 @@
 		73E2DB4425C44D1900CA461C /* Archive */ = {
 			isa = PBXGroup;
 			children = (
-				A00AF40D264156D400B8E98C /* CollectionView.swift */,
 				7344B7D6258A54F500F75C7A /* ArchiveMessageView.swift */,
 				73AC3732258AB1FF0008C19A /* MessageRow.swift */,
 			);
@@ -227,7 +227,7 @@
 		73E2DB4525C44D3500CA461C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				7386646125B0D737005942D9 /* SettingsView.swift */,
+				A00AF4112641CD6500B8E98C /* SettingsView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -236,7 +236,6 @@
 			isa = PBXGroup;
 			children = (
 				736966182584FF1F007D6438 /* GifPlayerView.swift */,
-				738D5E1C2584E77300F8A181 /* SentMessageView.swift */,
 				73831396257F702700591C6F /* ComposeMessageView.swift */,
 				732F297625839F940072FFE2 /* SendingMessageView.swift */,
 			);
@@ -277,9 +276,10 @@
 		A0BA3F992619D18D00123904 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7369662D2586A957007D6438 /* Persistence.swift */,
 				732F297E2583AB230072FFE2 /* Messages.swift */,
 				A0BA3F9A2619D1A600123904 /* MessageCardData.swift */,
-				A00AF4092641553100B8E98C /* Collection.swift */,
+				A00AF4092641553100B8E98C /* CollectionManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -408,7 +408,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7386646225B0D737005942D9 /* SettingsView.swift in Sources */,
 				A0D62331262999EE000224D7 /* CardShareSheet.swift in Sources */,
 				A00AF40E264156D400B8E98C /* CollectionView.swift in Sources */,
 				73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */,
@@ -421,6 +420,7 @@
 				73AC3733258AB1FF0008C19A /* MessageRow.swift in Sources */,
 				73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */,
 				A0B78A6826298A2100E66FA7 /* Vibration.swift in Sources */,
+				A0FD2A9626429D390077DE2D /* ComposeCategory.swift in Sources */,
 				73831392257F6FFB00591C6F /* PermissionView.swift in Sources */,
 				734A0B9125B5A0F4007BE57C /* ComposeGiftView.swift in Sources */,
 				A0BA3FA32619D1BC00123904 /* CardMessageView.swift in Sources */,
@@ -429,15 +429,15 @@
 				7369662E2586A957007D6438 /* Persistence.swift in Sources */,
 				A0BA3F9F2619D1B500123904 /* StackView.swift in Sources */,
 				A0B78A64262983DE00E66FA7 /* CardModal.swift in Sources */,
+				A00AF4122641CD6500B8E98C /* SettingsView.swift in Sources */,
 				734A0B9B25B5C99E007BE57C /* ShareSheet.swift in Sources */,
 				73B17BC1258379750018069E /* MessageContainer.swift in Sources */,
-				A00AF40A2641553100B8E98C /* Collection.swift in Sources */,
+				A00AF40A2641553100B8E98C /* CollectionManager.swift in Sources */,
 				736966272586A5B9007D6438 /* YFTP.xcdatamodeld in Sources */,
 				7328AF8C25BF0D4000CC9AB2 /* ApplicationFeature.swift in Sources */,
 				A0BA3F9B2619D1A600123904 /* MessageCardData.swift in Sources */,
 				73487F0425B1E5A30029E773 /* MessageReceivedView.swift in Sources */,
 				73831397257F702700591C6F /* ComposeMessageView.swift in Sources */,
-				738D5E1D2584E77300F8A181 /* SentMessageView.swift in Sources */,
 				734A0B9625B5ACC8007BE57C /* ActivityViewController.swift in Sources */,
 				735E44AE257AF7A600D5317C /* YFTPApp.swift in Sources */,
 			);
