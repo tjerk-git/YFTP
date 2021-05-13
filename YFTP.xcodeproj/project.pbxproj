@@ -31,10 +31,10 @@
 		73BC13B525BC7E50006C9A5B /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BC13B425BC7E50006C9A5B /* OnboardingView.swift */; };
 		A00AF40A2641553100B8E98C /* CollectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF4092641553100B8E98C /* CollectionManager.swift */; };
 		A00AF40E264156D400B8E98C /* CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF40D264156D400B8E98C /* CollectionView.swift */; };
-		A00AF4102641592500B8E98C /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF40F2641592500B8E98C /* CategoryView.swift */; };
+		A00AF4102641592500B8E98C /* CategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF40F2641592500B8E98C /* CategoryDetailView.swift */; };
 		A00AF4122641CD6500B8E98C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00AF4112641CD6500B8E98C /* SettingsView.swift */; };
 		A0165106262779590069F97E /* GreetingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0165105262779590069F97E /* GreetingView.swift */; };
-		A0B78A64262983DE00E66FA7 /* CardModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B78A63262983DE00E66FA7 /* CardModal.swift */; };
+		A040CC1D264A74F5003E845A /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A040CC1C264A74F5003E845A /* CategoryView.swift */; };
 		A0B78A6826298A2100E66FA7 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0B78A6726298A2100E66FA7 /* Vibration.swift */; };
 		A0BA3F792619C35900123904 /* DashBoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0BA3F782619C35900123904 /* DashBoardView.swift */; };
 		A0BA3F7E2619C73400123904 /* CardStack in Frameworks */ = {isa = PBXBuildFile; productRef = A0BA3F7D2619C73400123904 /* CardStack */; };
@@ -99,10 +99,10 @@
 		73BC13B425BC7E50006C9A5B /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		A00AF4092641553100B8E98C /* CollectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionManager.swift; sourceTree = "<group>"; };
 		A00AF40D264156D400B8E98C /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
-		A00AF40F2641592500B8E98C /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		A00AF40F2641592500B8E98C /* CategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailView.swift; sourceTree = "<group>"; };
 		A00AF4112641CD6500B8E98C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		A0165105262779590069F97E /* GreetingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingView.swift; sourceTree = "<group>"; };
-		A0B78A63262983DE00E66FA7 /* CardModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModal.swift; sourceTree = "<group>"; };
+		A040CC1C264A74F5003E845A /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 		A0B78A6726298A2100E66FA7 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		A0BA3F782619C35900123904 /* DashBoardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardView.swift; sourceTree = "<group>"; };
 		A0BA3F9A2619D1A600123904 /* MessageCardData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCardData.swift; sourceTree = "<group>"; };
@@ -151,9 +151,11 @@
 		735E44A1257AF7A600D5317C = {
 			isa = PBXGroup;
 			children = (
+				A040CC1C264A74F5003E845A /* CategoryView.swift */,
 				A00AF40D264156D400B8E98C /* CollectionView.swift */,
 				A0FD2A9526429D390077DE2D /* ComposeCategory.swift */,
-				A00AF40F2641592500B8E98C /* CategoryView.swift */,
+				7344B7D6258A54F500F75C7A /* ArchiveMessageView.swift */,
+				A00AF40F2641592500B8E98C /* CategoryDetailView.swift */,
 				736966252586A5B9007D6438 /* YFTP.xcdatamodeld */,
 				735E44AC257AF7A600D5317C /* YFTP */,
 				735E44BE257AF7A700D5317C /* YFTPTests */,
@@ -218,7 +220,6 @@
 		73E2DB4425C44D1900CA461C /* Archive */ = {
 			isa = PBXGroup;
 			children = (
-				7344B7D6258A54F500F75C7A /* ArchiveMessageView.swift */,
 				73AC3732258AB1FF0008C19A /* MessageRow.swift */,
 			);
 			path = Archive;
@@ -267,7 +268,6 @@
 			isa = PBXGroup;
 			children = (
 				A0165105262779590069F97E /* GreetingView.swift */,
-				A0B78A63262983DE00E66FA7 /* CardModal.swift */,
 				A0D62330262999EE000224D7 /* CardShareSheet.swift */,
 			);
 			path = Components;
@@ -413,7 +413,8 @@
 				73B17BBC25836E4E0018069E /* PreferenceManager.swift in Sources */,
 				732F297F2583AB230072FFE2 /* Messages.swift in Sources */,
 				A0BA3F792619C35900123904 /* DashBoardView.swift in Sources */,
-				A00AF4102641592500B8E98C /* CategoryView.swift in Sources */,
+				A040CC1D264A74F5003E845A /* CategoryView.swift in Sources */,
+				A00AF4102641592500B8E98C /* CategoryDetailView.swift in Sources */,
 				A0165106262779590069F97E /* GreetingView.swift in Sources */,
 				732F297725839F940072FFE2 /* SendingMessageView.swift in Sources */,
 				7344B7D7258A54F500F75C7A /* ArchiveMessageView.swift in Sources */,
@@ -428,7 +429,6 @@
 				736966192584FF1F007D6438 /* GifPlayerView.swift in Sources */,
 				7369662E2586A957007D6438 /* Persistence.swift in Sources */,
 				A0BA3F9F2619D1B500123904 /* StackView.swift in Sources */,
-				A0B78A64262983DE00E66FA7 /* CardModal.swift in Sources */,
 				A00AF4122641CD6500B8E98C /* SettingsView.swift in Sources */,
 				734A0B9B25B5C99E007BE57C /* ShareSheet.swift in Sources */,
 				73B17BC1258379750018069E /* MessageContainer.swift in Sources */,

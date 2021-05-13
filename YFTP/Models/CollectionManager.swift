@@ -8,49 +8,32 @@
 import Foundation
 import CoreData
 
-struct Category: Identifiable {
-    var id = UUID()
-    var title:String
-    var emoji:String
-}
-
-
 class CollectionManager : ObservableObject {
     
     static let standard = CollectionManager()
     
-    @Published public var categories = [Category]()
+    @Published public var categories = [Collection]()
     
     private init(){
-        categories = getAll()
+        getAll()
     }
     
     func getByUUID(uuid: String){
         
     }
     
-    func getAll() -> [Category]  {
+    func getAll()  {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Collection")
-        var items: [Category] = []
 
         do {
              let persistenceController = PersistenceController.shared
              let results   = try persistenceController.container.viewContext.fetch(fetchRequest)
-             let categories = results as! [Collection]
-                
-             for category in categories {
-                items.append(
-                    Category(
-                        title: category.title ?? "Example",
-                        emoji: category.emoji ?? "⚠️"
-                    ))
-             }
-
+             categories = results as! [Collection]
+            
         } catch let error as NSError {
           print("Could not fetch \(error)")
         }
         
-        return items
     }
     
     func addToCoreData(title: String, emoji :String) {
@@ -63,9 +46,14 @@ class CollectionManager : ObservableObject {
            try? persistenceController.container.viewContext.save()
         }
         
-        categories = getAll()
-        
+        getAll()
     }
     
+    func save() {
+        let persistenceController = PersistenceController.shared
+        persistenceController.container.viewContext.performAndWait {
+           try? persistenceController.container.viewContext.save()
+        }
+    }
     
 }

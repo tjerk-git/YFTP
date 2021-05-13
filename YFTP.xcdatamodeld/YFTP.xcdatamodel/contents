@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E232" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="Message">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20E241" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="Message">
     <entity name="Collection" representedClassName="Collection" syncable="YES" codeGenerationType="class">
         <attribute name="emoji" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="message" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="collection" inverseEntity="Message"/>
+        <relationship name="messages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Message" inverseName="collection" inverseEntity="Message"/>
     </entity>
     <entity name="Message" representedClassName="Message" syncable="YES" codeGenerationType="class">
         <attribute name="body" optional="YES" attributeType="String"/>
@@ -14,7 +14,7 @@
         <attribute name="isGift" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="loved" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="sender" optional="YES" attributeType="String"/>
-        <relationship name="collection" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Collection" inverseName="message" inverseEntity="Collection"/>
+        <relationship name="collection" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Collection" inverseName="messages" inverseEntity="Collection"/>
     </entity>
     <elements>
         <element name="Collection" positionX="-63" positionY="36" width="128" height="89"/>

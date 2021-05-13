@@ -35,8 +35,6 @@ class Messages : ObservableObject {
            newMessage.isGift = (isGift != 0)
            newMessage.sender = sender
            
-          
-
            try? persistenceController.container.viewContext.save()
         }
         items = constructMessageCardData()
@@ -205,40 +203,6 @@ class Messages : ObservableObject {
         
         return request.identifier
     }
-    
-    func addMessagesToCollection(selection: Set<String>) {
-        
-        
-//        var messages = []
-//        for message in messages {
-//            let persistenceController = PersistenceController.shared
-//            persistenceController.container.viewContext.performAndWait {
-//                message.collection = collection
-//               try? persistenceController.container.viewContext.save()
-//            }
-//        }
-    }
-    
-    
-//    func getUpcomingNotification() {
-//        UNUserNotificationCenter.current().getPendingNotificationRequests {
-//            (requests) in
-//            var nextTriggerDates: [Date] = []
-//
-//            print(requests)
-//            for request in requests {
-//                if let trigger = request.trigger as? UNCalendarNotificationTrigger,
-//                    let triggerDate = trigger.nextTriggerDate(){
-//                    nextTriggerDates.append(triggerDate)
-//                }
-//            }
-//
-//           // print(nextTriggerDates)
-//            if let nextTriggerDate = nextTriggerDates.min() {
-//               // print(nextTriggerDate)
-//            }
-//        }
-//    }
 }
 extension Date {
     func startOfMonth() -> Date {

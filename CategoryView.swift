@@ -2,38 +2,51 @@
 //  CategoryView.swift
 //  YFTP
 //
-//  Created by Tjerk Dijkstra on 04/05/2021.
+//  Created by Tjerk Dijkstra on 11/05/2021.
 //
 
 import SwiftUI
+import CoreData
 
 struct CategoryView: View {
-    var title:String
-    var emoji:String
     
-    @State var showModal = false
+    @State private var showModal = false
+    
+    var collection : Collection
     
     var body: some View {
-        Button(
-            action: {
-                showModal = true
-            },
-            label: {
-                Text("\(emoji)").font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center)
-                Text("\(title)").font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/).fontWeight(.bold).foregroundColor(Color.black).multilineTextAlignment(.center)
+        VStack(){
+            
+            Text(collection.title ?? "")
+            Text(collection.emoji ?? "")
+            
+            ForEach(Array(collection.messages as? Set<Message> ?? []), id: \.self){ message in
+                Text("\(message.body ?? "")" )
             }
-        ).fullScreenCover(isPresented: $showModal, content: {
-            ArchiveMessageView(showModal: $showModal)
-        })
-        .frame(width: 150, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        .padding(10)
-        .background(Color.white)
-        .shadow(radius: 5)
+
+            Button(action: {
+                showModal = true
+            }){
+         
+            Image(systemName: "rectangle.stack.fill.badge.plus").font(.largeTitle).foregroundColor(Color("Color"))
+            Text("Add messages")
+                .fontWeight(.bold)
+                .padding()
+                .overlay(
+                    Capsule(style: .continuous).stroke(Color.blue, style: StrokeStyle(lineWidth: 3))
+                )
+                .foregroundColor(.blue).font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
+            
+            }.sheet(isPresented: $showModal) {
+                ArchiveMessageView(showModal: $showModal, collection: collection)
+            }
+        }
     }
 }
 
+//
 //struct CategoryView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        CategoryView(title: "Something", emoji: "🚀", messages: Messages)
+//        CategoryView()
 //    }
 //}
