@@ -13,7 +13,7 @@ import AVFoundation
 struct CardMessageView: CardView {
     @State private var showModal = false
     @State private var showingSheet = false
-    @EnvironmentObject var messages : Messages
+    var messages = Messages.standard
     
     var data: MessageCardData?
     var currentIndex: Int?
@@ -61,6 +61,7 @@ struct CardMessageView: CardView {
         .onTapGesture(count: 2) {
             Vibration.success.vibrate()
             messages.toggleLoveState(id: data?.uuid ?? "", currentIndex: data?.currentIndex ?? 0)
+    
         }
         .frame(minWidth: 300, maxWidth: .infinity, minHeight: 400, maxHeight: 500, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
         .background(data?.color)

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+let defaults = UserDefaults.standard
 
 let quotes = [
     "It's Monday, psyche it's \(Date().dayOfWeek()!).",
@@ -29,6 +30,7 @@ let quotes = [
     "Stop.. just.. take it easy",
     "Learn from the past",
     "It's weekend! oh wait it's \(Date().dayOfWeek()!).",
+    "Hey, \(defaults.string(forKey: "Name") ?? "dude") "
 ]
 
 

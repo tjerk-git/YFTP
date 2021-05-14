@@ -12,17 +12,17 @@ struct ArchiveMessageView: View {
     @Binding var showModal: Bool
     @State private var selection = Set<String>()
     @Environment(\.editMode) private var editMode
+    
     var collection: Collection
     let collectionManager = CollectionManager.standard
-    
     var messages = Messages.standard
 
     var body: some View {
         VStack(){
-            Button("Back"){
-                showModal = false
-            }
-            EditButton()
+            EditButton().font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/).padding(10)
+        }
+        VStack(){
+            
             List(messages.items, id: \.uuid, selection: $selection) { message in
                 Text(message.body )
             }
@@ -36,7 +36,7 @@ struct ArchiveMessageView: View {
                     collection.addToMessages(message)
                     collectionManager.save()
                 }
-                
+                                
                 showModal = false
               }
             })

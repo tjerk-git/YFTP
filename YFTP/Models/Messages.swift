@@ -128,9 +128,12 @@ class Messages : ObservableObject {
            try? persistenceController.container.viewContext.save()
         }
         
-        currentMessageIndex = currentIndex - 1
         
-        objectWillChange.send()
+        items = constructMessageCardData()
+        
+        currentMessageIndex = currentIndex - 1
+   
+        //objectWillChange.send()
     }
     
     func sendMessage(message: String, sender: String, isGift: Int) {

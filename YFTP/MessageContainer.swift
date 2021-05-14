@@ -28,15 +28,9 @@ struct MessageContainer: View {
             DashBoardView(viewModel: viewModel)
              .tabItem {
                  Image(systemName: "note.text")
-                 Text("From you")
+                 Text("Messages")
              }.tag(1)
-            
-//            ComposeMessageView(viewModel: viewModel, messages : messages)
-//             .tabItem {
-//                 Image(systemName: "square.and.pencil")
-//                 Text("Compose")
-//             }.tag(2)
-            
+                        
             CollectionView()
              .tabItem {
                  Image(systemName: "mail.stack.fill")

@@ -13,6 +13,7 @@ struct CollectionView: View {
     @ObservedObject var collections = CollectionManager.standard
     @State private var showView = "CategoryDetailView"
     @State var selectedCollection = Collection()
+    @Environment(\.managedObjectContext) var managedObjectContext
     
     var body: some View {
      
@@ -26,11 +27,38 @@ struct CollectionView: View {
                 ScrollView {
                     Spacer()
                     LazyVGrid(columns: columns, spacing: 15) {
+                        
+                       HStack(){
+                           VStack(){
+                            Image(systemName: "heart.fill").foregroundColor(Color.red)
+                                 Text("Favorites").font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/).fontWeight(.bold).foregroundColor(Color.black).multilineTextAlignment(.center)
+                             }
+                           .frame(width: 140, height: 140, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                           .padding(10)
+                           .background(Color.white)
+                           .shadow(radius: 3)
+                       }.background(Color.white).onTapGesture {
+                        showView = "Favorites"
+                       }
+                        
+                        HStack(){
+                            VStack(){
+                                  Image(systemName: "mail.stack.fill")
+                                  Text("All messages").font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/).fontWeight(.bold).foregroundColor(Color.black).multilineTextAlignment(.center)
+                              }
+                            .frame(width: 140, height: 140, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .padding(10)
+                            .background(Color.white)
+                            .shadow(radius: 3)
+                        }.background(Color.white).onTapGesture {
+                         showView = "AllMessages"
+                        }
+                         
                         ForEach(collections.categories, id: \.id) { category in
                             CategoryDetailView(title: category.title ?? "", emoji: category.emoji ?? "").onTapGesture {
                                     showView = "CategoryView"
                                     selectedCollection = category
-                                }
+                            }
                         }
                     }.padding(.horizontal)
             
@@ -42,8 +70,7 @@ struct CollectionView: View {
                         showModal = true
                     }){
                  
-                    Image(systemName: "rectangle.stack.fill.badge.plus").font(.largeTitle).foregroundColor(Color("Color"))
-                    Text("Add category")
+                    Text("Create collection")
                         .fontWeight(.bold)
                         .padding()
                         .overlay(
@@ -64,7 +91,7 @@ struct CollectionView: View {
                 Button(action: {
                     showView = "CategoryDetailView"
                 }){
-                    Text("Back")
+                    Text("Back to collections")
                         .fontWeight(.bold)
                         .padding()
                         .overlay(
@@ -72,8 +99,43 @@ struct CollectionView: View {
                         )
                         .foregroundColor(.blue).font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
                 }
+                Spacer()
             }
     
+        case "AllMessages":
+            VStack(){
+                AllMessages()
+                Button(action: {
+                    showView = "CategoryDetailView"
+                }){
+                    Text("Back to collections")
+                        .fontWeight(.bold)
+                        .padding()
+                        .overlay(
+                            Capsule(style: .continuous).stroke(Color.blue, style: StrokeStyle(lineWidth: 3))
+                        )
+                        .foregroundColor(.blue).font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
+                }
+                Spacer()
+            }
+        
+        case "Favorites":
+            VStack(){
+                Favorites()
+                Button(action: {
+                    showView = "CategoryDetailView"
+                }){
+                    Text("Back to collections")
+                        .fontWeight(.bold)
+                        .padding()
+                        .overlay(
+                            Capsule(style: .continuous).stroke(Color.blue, style: StrokeStyle(lineWidth: 3))
+                        )
+                        .foregroundColor(.blue).font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/)
+                }
+                Spacer()
+            }
+        
         default:
             Text("something")
         }

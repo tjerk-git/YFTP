@@ -54,6 +54,9 @@ class CollectionManager : ObservableObject {
         persistenceController.container.viewContext.performAndWait {
            try? persistenceController.container.viewContext.save()
         }
+        
+        getAll()
+        
     }
     
 }

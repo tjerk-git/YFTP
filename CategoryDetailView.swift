@@ -14,19 +14,22 @@ struct CategoryDetailView: View {
     @State private var showView = "CategoryView"
     
     var body: some View {
-        VStack(){
-              Text("\(emoji)").font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center)
-              Text("\(title)").font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/).fontWeight(.bold).foregroundColor(Color.black).multilineTextAlignment(.center)
-          }
-        .frame(width: 140, height: 140, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-        .padding(10)
-        .background(Color.white)
-        .shadow(radius: 3)
+        HStack(){
+            VStack(){
+                  Text("\(emoji)").font(/*@START_MENU_TOKEN@*/.largeTitle/*@END_MENU_TOKEN@*/).multilineTextAlignment(.center)
+                  Text("\(title)").font(/*@START_MENU_TOKEN@*/.subheadline/*@END_MENU_TOKEN@*/).fontWeight(.bold).foregroundColor(Color.black).multilineTextAlignment(.center)
+              }
+            .frame(width: 140, height: 140, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .padding(10)
+            .background(Color.white)
+            .shadow(radius: 3)
+        }.background(Color.white)
+       
     }
 }
 
-//struct CategoryDetailView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        CategoryView(title: "Something", emoji: "🚀", messages: Messages)
-//    }
-//}
+struct CategoryDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        CategoryDetailView(title: "Something", emoji: "🚀")
+    }
+}

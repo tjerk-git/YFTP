@@ -19,6 +19,7 @@ struct StackView: View {
     
     var body: some View {
         
+        
         let configuration : StackConfiguration = {
             StackConfiguration (startIndex: messages.currentMessageIndex , numberOfCardsShown: 2)
         }()
@@ -57,7 +58,7 @@ struct StackView: View {
           Image(systemName: "plus.circle.fill").accentColor(Color("Color")).font(.largeTitle)
         }
         .sheet(isPresented: $showModal) {
-            ComposeMessageView(showModal: $showModal, viewModel: viewModel)
+            ComposeMessageView(viewModel: viewModel, showModal: $showModal)
         }
         
            
@@ -81,10 +82,10 @@ struct StackView: View {
 
 
 
-struct StackExampleView_Previews: PreviewProvider {
-    static var previews: some View {
-        StackView(messages: Messages(), viewModel: MessageContainerViewModel())
-    }
-}
-
-
+//struct StackExampleView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        StackView(messages: Messages(), viewModel: MessageContainerViewModel())
+//    }
+//}
+//
+//
